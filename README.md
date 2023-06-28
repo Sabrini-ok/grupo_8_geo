@@ -11,12 +11,14 @@ El objetivo primordial es producir productos de belleza mediante la utilización
 
 **Descripción de los integrantes**
 
-Facundo Undiano: Fan del cuarteto
+Facundo Undiano: Vive en Córdoba Capital, le gusta el cuarteto y tiene 25 años
 
-Guido Trebliner: Fan de Atlanta
+Guido Trebliner: Vive en CABA, le gusta ver series y peliculas, y también le gusta el fútbol y la play.
 
-Jessica Baez: Fan de la chipa
+Jessica Baez: Tiene una hermosa nena llamada Martina y le gusta mucho el chipa
 
-Sabrina Serra Fulles: Fan de los animalitos
+Sabrina Serra Fulles: Vive en zona norta, es diseñadora, le encantan los animales y tiene un perro y un gato.
 
-Tobias Markarian: Fan de CASLA
+Tobias Markarian: Recién graduado de sus estudios secundarios. Juega al fútbol y le gusta mucho los juegos virtuales.
+
+Darío Cáceres: Tiene 26 años, le gusta mucho la música y toca bien la guitarra.
