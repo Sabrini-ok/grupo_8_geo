@@ -25,7 +25,11 @@ Darío Cáceres: Tiene 26 años, le gusta mucho la música y toca bien la guitar
 
 **Sitios elegidos**
 https://www.vivino.com/ de esta página nos gustó la simpleza que tiene para poder elegir sus productos, es sencillo para una persona principiante que no conoce del tema.
+
 https://www.nike.com.ar/ acá nos gustó el diseño.
+
 https://www.zara.com/ar/ rescatamos de Zara sus grandes imagenes que llevan al espectador a apreciar los productos y además la gran y buena cantidad de filtros.
+
 https://cosmeticavegana.com.ar/ nos interesó ver que hacía la competencia por eso rescatamos esta página.
+
 https://dribbble.com/shots/18541930-Ecommerce-app-Mobile-app y por último de acá pudimos obtener diseños de mobile como desktop
