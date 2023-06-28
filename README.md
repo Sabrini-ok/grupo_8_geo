@@ -11,13 +11,13 @@ El objetivo primordial es producir productos de belleza mediante la utilización
 
 **Descripción de los integrantes**
 
-Facundo Undiano: Vive en Córdoba Capital, le gusta el cuarteto y tiene 25 años
+Facundo Undiano: Es de Córdoba Capital, le gusta el cuarteto y tiene 25 años.
 
 Guido Trebliner: Vive en CABA, le gusta ver series y peliculas, y también le gusta el fútbol y la play.
 
-Jessica Baez: Tiene una hermosa nena llamada Martina y le gusta mucho el chipa
+Jessica Baez: Tiene una hermosa nena llamada Martina y le gusta mucho el chipa.
 
-Sabrina Serra Fulles: Vive en zona norta, es diseñadora, le encantan los animales y tiene un perro y un gato.
+Sabrina Serra Fulles: Es diseñadora, vive en zona norte, esle encantan los animales y tiene un perro y un gato.
 
 Tobias Markarian: Recién graduado de sus estudios secundarios. Juega al fútbol y le gusta mucho los juegos virtuales.
 
