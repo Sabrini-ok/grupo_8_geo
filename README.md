@@ -23,13 +23,21 @@ Tobias Markarian: Recién graduado de sus estudios secundarios. Juega al fútbol
 
 Darío Cáceres: Tiene 26 años, le gusta mucho la música y toca bien la guitarra.
 
+----------
+
 **Sitios elegidos**
-https://www.vivino.com/ de esta página nos gustó la simpleza que tiene para poder elegir sus productos, es sencillo para una persona principiante que no conoce del tema.
 
-https://www.nike.com.ar/ acá nos gustó el diseño.
+https://www.vivino.com/
+De esta página nos gustó la simpleza que tiene para poder elegir sus productos, es sencillo para una persona principiante que no conoce del tema.
 
-https://www.zara.com/ar/ rescatamos de Zara sus grandes imagenes que llevan al espectador a apreciar los productos y además la gran y buena cantidad de filtros.
+https://www.nike.com.ar/ 
+De acá nos gustó el diseño y la navegación. Muy bien la página de producto.
 
-https://cosmeticavegana.com.ar/ nos interesó ver que hacía la competencia por eso rescatamos esta página.
+https://www.zara.com/ar/ 
+Rescatamos de Zara sus grandes imagenes que llevan al espectador a apreciar los productos y además la gran y buena cantidad de filtros.
 
-https://dribbble.com/shots/18541930-Ecommerce-app-Mobile-app y por último de acá pudimos obtener diseños de mobile como desktop
+https://cosmeticavegana.com.ar/ 
+Nos interesó ver que hacía la competencia por eso rescatamos esta página.
+
+https://dribbble.com/shots/18541930-Ecommerce-app-Mobile-app 
+Por último de acá pudimos obtener tanto diseños de mobile como desktop
