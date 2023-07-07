@@ -5,11 +5,6 @@
 }
 
 body {
-    background-color: aqua;
     font-family: 'Roboto', sans-serif;
-}
-
-.probando {
-    font-size: 20px;
-    text-align: center;
+    background-color: aqua;
 }

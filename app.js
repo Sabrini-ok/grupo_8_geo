@@ -45,6 +45,7 @@ app.get('/login', (req, res) => {
     res.sendFile(ruta);
 });
 
+
 app.get('/detallesProducto', (req, res) => {
     const ruta = path.join(__dirname, '/views/productDetail.html');
     res.sendFile(ruta);
