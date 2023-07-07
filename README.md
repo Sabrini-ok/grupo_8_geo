@@ -17,11 +17,9 @@ Guido Trebliner: Vive en CABA, le gusta ver series y peliculas, y también le gu
 
 Jessica Baez: Tiene una hermosa nena llamada Martina y le gusta mucho el chipa.
 
-Sabrina Serra Fulles: Es diseñadora, vive en zona norte, le encantan los animales y tiene un perro y dos gato.
+Sabrina Serra Fulles: Es diseñadora, vive en zona norte, le encantan los animales y tiene un perro y un gato.
 
 Tobias Markarian: Recién graduado de sus estudios secundarios. Juega al fútbol y le gusta mucho los juegos virtuales.
-
-Darío Cáceres: Tiene 26 años, le gusta mucho la música y toca bien la guitarra.
 
 ----------
 
