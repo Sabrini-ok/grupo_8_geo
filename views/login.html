@@ -31,8 +31,23 @@
         </section>
     </header>
 
-    <main>
-        <h1>Iniciar Sesion</h1>
+    <main class="mainLogin">
+        <h1 class="h1login">Ingresa</h1>
+        <div class="userName">
+            <label for="userName">Nombre de Usuario</label>
+            <input type="text" name="userName" id="userName" required placeholder="required">
+            <span class="feedback"></span>
+        </div>
+
+        <div class="password">
+            <label for="userPassword">Contraseña</label>
+            <input type="password" name="userPassword" id="userPassword" required placeholder="required">
+            <span class="feedback"></span>
+        </div>
+
+        <div class="loginButton">
+            <input type="submit">
+        </div>
     </main>
 
     <footer>

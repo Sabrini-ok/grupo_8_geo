@@ -17,6 +17,7 @@ body {
     flex-wrap: nowrap;
     justify-content:space-between;
     margin-top: 15px;
+    margin-bottom: 30px;
     align-items: center;
 }
 
@@ -74,10 +75,74 @@ body {
     padding-bottom: 3px;
 }
 
-h1 {
-    margin: 30px 0px;
+.h1login {
+    margin: 20px 0px;
     text-align: center;
-    color:cadetblue
+    color:cadetblue;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.mainLogin {
+    width: 90%;
+    height: 50vh;
+    margin: auto;
+    margin-bottom: 40px;
+    background-color: antiquewhite;
+    border: 2px solid grey;
+    padding: 5px;
+}
+
+.userName {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+            
+.userName label {
+    font-weight: bold;
+    width: 49%;
+}
+            
+.userName input {
+    text-align: center;
+    text-transform: uppercase;
+    width: 48%;
+    height: 20px;
+}
+            
+.password {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+            
+.password label {
+    font-weight: bold;
+    width: 49%;
+    text-align: center;
+}
+            
+.password input {
+    text-align: center;
+    text-transform: uppercase;
+    width: 48%;
+    height: 20px;
+}
+            
+.loginButton {
+    display: flex;
+    justify-content: center;
+}
+            
+.loginButton input {
+    font-weight: bold;
+    width: 30%;
+    height: 25px;
+    background-color: bisque;
+
 }
 
 .social-networks {

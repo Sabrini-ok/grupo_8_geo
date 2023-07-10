@@ -74,14 +74,125 @@ body {
     padding-bottom: 3px;
 }
 
-h1 {
-    margin: 30px 0px;
+.h1register {
     text-align: center;
-    color:cadetblue
+    margin: 20px 0px;
+    color:cadetblue;
+}
+            
+.mainRegister {
+    width: 90%;
+    background-color:antiquewhite;
+    margin: auto;
+    border: 2px solid grey;
+    padding: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.fullname {
+    margin-bottom: 15px;
+}
+            
+.fullname label {
+    font-weight: bold;
+}
+            
+.fullname input {
+    text-align: center;
+    width: 50%;
+}
+            
+.userName {
+    margin-bottom: 15px;
+}
+            
+.userName label {
+    font-weight: bold;
+}
+            
+.birthDate {
+    margin-bottom: 15px;
+}
+            
+.birthDate label {
+    font-weight: bold;
+}
+            
+.address {
+    margin-bottom: 15px;
+}
+            
+.address label {
+    font-weight: bold;
+}
+            
+.address input {
+    text-align: center;
+}
+            
+.sellOrBuy {
+    margin-bottom: 15px;
+}
+            
+.sellOrBuy label {
+    font-weight: bold;
+}
+            
+.sellOrBuy input {
+    margin-left: 15px;
+}
+            
+.interests {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 5px;
+}
+            
+.interests label {
+    font-weight: bold;
+}
+            
+.avatar {
+    margin-bottom: 15px;
+}
+            
+.avatar label {
+    font-weight: bold;
+}
+            
+.password {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 25px;
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.div-registerButtons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+            
+.registerButtons {
+    width: 30%;                
+}
+            
+.registerButtons input {
+    flex-wrap: wrap;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 30px;
+    background-color: bisque;
 }
 
 .social-networks {
-
 }
 
 .footer-1 {
@@ -90,8 +201,6 @@ h1 {
     justify-content: space-around;
     font-weight: 900;
     margin-top: 20px;
-
-    
 }
 
 .footer-2 {
@@ -101,6 +210,7 @@ h1 {
 
 .footer-2 i{
   margin-top: 10px;
+  margin-bottom: 40px;
   width: 10%;
   text-align: center;
 }
