@@ -80,8 +80,49 @@ h1 {
     color:cadetblue
 }
 
-.social-networks {
+.productDetail-img {
+    display: flex;
+    justify-content: space-around;
+}
 
+.productDetail-img img{
+    width: 70%;
+}
+
+.product-description {
+    height: 50px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.payment-methods i {
+    color:gray;
+}
+
+.whatsapp-icon {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: end;
+}
+
+.whatsapp-icon i {
+    font-size: 40px;
+}
+
+.social-networks {
+    margin-top: 20px;
+    padding: 20px 0px 30px 0px;
+    background-color: beige;
 }
 
 .footer-1 {
@@ -104,7 +145,6 @@ h1 {
   width: 10%;
   text-align: center;
 }
-
 
 
 
