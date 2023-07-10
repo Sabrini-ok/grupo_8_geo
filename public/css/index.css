@@ -81,6 +81,11 @@ h1 {
     color:cadetblue
 }
 
+h2 {
+    margin: 30px 0px;
+    text-align: center;
+}
+
 .social-networks {
 
 }
@@ -123,4 +128,24 @@ h1 {
 
 .fotito {
     text-align: center;
+}
+
+.produ1{
+    margin: 30px 0px;
+    text-align: left;
+}
+
+.produ2{
+    margin: -30px 0px;
+    text-align: right;
+}
+
+.produ3{
+    margin: 30px 0px;
+    text-align: left;
+}
+
+.produ4{
+    margin: -50px 0px;
+    text-align: right;
 }
