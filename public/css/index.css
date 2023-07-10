@@ -105,3 +105,18 @@ h1 {
   width: 10%;
   text-align: center;
 }
+
+
+
+
+
+             /**Media queries**/
+
+@media (min-width: 361px) {
+
+}
+
+
+@media (min-width: 769px) {
+
+}
