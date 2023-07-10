@@ -110,6 +110,10 @@ body {
 .userName label {
     font-weight: bold;
 }
+
+.userName input {
+    width: 47%;
+}
             
 .birthDate {
     margin-bottom: 15px;
@@ -193,6 +197,9 @@ body {
 }
 
 .social-networks {
+    margin-top: 20px;
+    padding: 20px 0px 30px 0px;
+    background-color: beige;
 }
 
 .footer-1 {
@@ -201,6 +208,8 @@ body {
     justify-content: space-around;
     font-weight: 900;
     margin-top: 20px;
+
+    
 }
 
 .footer-2 {
@@ -210,7 +219,6 @@ body {
 
 .footer-2 i{
   margin-top: 10px;
-  margin-bottom: 40px;
   width: 10%;
   text-align: center;
 }
