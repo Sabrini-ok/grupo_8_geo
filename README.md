@@ -39,3 +39,10 @@ Nos interesó ver que hacía la competencia por eso rescatamos esta página.
 
 https://dribbble.com/shots/18541930-Ecommerce-app-Mobile-app 
 Por último de acá pudimos obtener tanto diseños de mobile como desktop
+
+----------
+
+- **Nuestro tablero de Trello:** https://trello.com/b/bySIi53x/g8-geo-sprint-2
+
+- **Nuestra primera Retro:** https://www.figma.com/file/KYG4e0MoKgtQjqvhGwyoN6/Retro-G8?type=whiteboard&node-id=0%3A1&t=uXXz1NudUuC3rkxN-1
+
