@@ -1,97 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/register.css">
+    <title>Registro - Geo Cosmetica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .register-form {
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .register-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .register-form input,
+        .register-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .register-form button {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .register-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="nav-bar">
-            <section class="burger-menu">
-                <i class="fas fa-bars"></i>
-            </section>
-            <section class="search-bar">
-                <input type="search" name="barraBusqueda" placeholder="Buscar productos, marcas"><button><i class="fas fa-search"></i></button>
-            </section>
-            <section class="user-menu">
-                <div class="user-menu-1">
-                    <i class="far fa-user"></i>
-                </div>
-                <div class="user-menu-2">
-                    <i class="fas fa-sort-down"></i>
-                </div>
-            </section>
-        </nav>
-        <section class="banner">
-
-        </section>
-    </header>
-
-    <main class="mainRegister">
-        <h1 class="h1register">Registrate</h1>
-        <form action="/register" method="POST">
-            <div class="fullname">
-                <label for="fullname">Nombre y apellido</label>
-                <input type="text" name="nombreCompleto" id="fullname" required placeholder="'Fernando Garcia'">
-            </div>
-    
-            <div class="userName">
-                <label for="user">Nombre de Usuario</label>
-                <input type="text" name="nombreUsuario" id="user" required>
-            </div>
-    
-            <div class="birthDate">
-                <label for="birthDate">Fecha de nacimiento</label>
-                <input type="date" name="date" id="birthDate" value="2023-07-22" min="1900-07-22" max="2024-07-22" required>
-            </div>
-    
-            <div class="address">
-                <label for="address">Domicilio</label>
-                <input type="text" name="domicilio" id="address" required placeholder="'Calle falsa 1234'">
-            </div>
-    
-            <div class="sellOrBuy">
-                <label>Perfil del Usuario</label>
-                <input type="radio" name="userProfile" value="comprar" required>Comprar
-                <input type="radio" name="userProfile" value="vender" required>Vender
-            </div>
-    
-            <div class="interests">
-                <label for="interest">Intereses</label>
-                    <input type="checkbox" id="interest" required> Electro
-                    <input type="checkbox" id="interest" required> Moda
-                    <input type="checkbox" id="interest" required> Hogar
-                    <input type="checkbox" id="interest" required> Jugueteria
-                    <input type="checkbox" id="interest" required> Vida sana
-            </div>
-    
-            <div class="avatar">
-                <label for="avatar">Seleccionar foto de perfil</label>
-                <input type="file" name="avatar" accept=".jpg, .png" required>
-            </div>
-    
-            <div class="password">
-                <label for="password">Contraseña</label>
-                <input type="password" name="password" id="password" required>
-                <label for="password">Confirmar contraseña</label>
-                <input type="password" name="password" id="password" required>
-            </div>
-            
-            <div class="div-registerButtons">
-                <div class="registerButtons">
-                    <input type="submit">
-                </div>
-                <div class="registerButtons">
-                    <input type="reset">
-                </div>
-            </div>
+    <div class="container">
+        <form class="register-form" action="home.html" method="POST">
+            <h2>Registro - Geo Cosmetica</h2>
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo electronico" required>
+            <input type="password" name="password" placeholder="Contrasena" required>
+            <input type="password" name="confirm_password" placeholder="Confirmar contrasena" required>
+            <select name="genero" required>
+                <option value="" disabled selected>Selecciona tu genero</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+            <button type="submit">Registrarse</button>
         </form>
-    </main>
-
+    </div>
+    
     <footer>
         <section class="social-networks">
             <div class="footer-1">
