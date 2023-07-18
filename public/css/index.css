@@ -172,12 +172,17 @@ h1 {
 
              /**Media queries**/
 
-@media (min-width: 361px) {
+@media (min-width: 481px) {
 
 }
-
-
+             
+             
 @media (min-width: 769px) {
-
+             
+}
+             
+             
+@media (min-width: 1280px) {
+             
 }
 
