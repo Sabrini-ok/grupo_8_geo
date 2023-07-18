@@ -12,7 +12,8 @@ body {
 }
 
 .nav-bar {
-    width: 100%;
+    width: 95%;
+    margin: auto;
     display: flex;
     flex-wrap: nowrap;
     justify-content:space-between;
@@ -28,6 +29,10 @@ body {
     height: 35px;
     text-align: center;
     display: flex;
+}
+
+.burger-menu:hover {
+    color: rgb(48, 88, 191);
 }
 
 .burger-menu i {
@@ -54,6 +59,7 @@ body {
     border: none;
     height: 20px;
     align-items: center;
+    width: 30vw;
 }
 
 .search-bar i {
@@ -62,11 +68,12 @@ body {
 
 .user-menu {
     display: flex;
-    width: 10%;
+    width: 10vw;
     height: 25px;
-    justify-content: start;
+    justify-content: space-around;
     align-items: center;
     border: 1px solid black
+
 }
 
 .user-menu-2 {
@@ -151,7 +158,9 @@ h1 {
   text-align: center;
 }
 
-
+.footer-2 i:hover {
+    color: rgb(48, 88, 191);
+}
 
 
 
