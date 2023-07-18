@@ -1,7 +1,8 @@
 
 const express = require('express');
 const path = require('path');
-const fs = require('fs'); 
+const fs = require('fs');
+const dotenv = require('dotenv').config();
 //Para requerir librerias
 
 const app = express();
@@ -52,4 +53,4 @@ app.get('/detallesProducto', (req, res) => {
 });
 
 
-app.listen(3000, () => console.log('Servidor corriendo en puerto 3000')); //Levantando servidor
+app.listen(process.env.PORT, () => console.log('Servidor corriendo en puerto ' + process.env.PORT)); //Levantando servidor
