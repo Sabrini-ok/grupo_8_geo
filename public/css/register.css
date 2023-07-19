@@ -78,7 +78,7 @@ header{
     justify-content: center;
 }
 
-.help-icon{
+.cart-icon{
     display: none;
 }
 
@@ -383,7 +383,7 @@ header{
     display: none;
 }
 
-.help-icon{
+.cart-icon{
     display: flex;
 }
 

@@ -47,7 +47,7 @@ app.get('/login', (req, res) => {
 });
 
 
-app.get('/detallesProducto', (req, res) => {
+app.get('/detalle', (req, res) => {
     const ruta = path.join(__dirname, '/views/productDetail.html');
     res.sendFile(ruta);
 });
