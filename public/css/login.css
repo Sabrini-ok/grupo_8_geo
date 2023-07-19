@@ -11,7 +11,8 @@ body {
     background: linear-gradient(151deg, #FAFAFA 26.04%, #AB86A7 100%);
     width: 100vw;
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 header{
@@ -32,68 +33,64 @@ header{
     padding: 0px 16px;
     justify-content: space-between;
     align-items: center;
-    align-self: stretch;
 }
 
-.headerbuttons{
+.mobilelogo{
+    width: 33vw;
+}
+
+.left-nav{
     display: flex;
-    width: 115.5px;
+    flex-direction: row;
+    width: 50%;
     justify-content: flex-end;
     align-items: center;
     gap: 16px;
 }
 
-.headerbuttons button{
+.headerbuttons{
     display: flex;
-    align-items: flex-start;
-    align-self: stretch;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.headerbuttons button{
     color: #8c8c8c;
     background: none;
     border: none;
-    width: 24px;
-}
-
-/* .burger-menu {
-    padding: 5px;
-    background-color:floralwhite;
-    border-radius: 25%;
-    width: 25%;
-    height: 35px;
-    text-align: center;
-    display: flex;
-}
-
-.burger-menu i {
-    font-size: 26px;
-
+    width: 16px;
 }
 
 .search-bar {
+    display: none;
+}
+
+.search-icon {
     display: flex;
-    width: 35%;
-    align-items: center;
-    justify-content: end;
-    margin-left: 15px;
+    justify-content: center;
 }
 
-.search-bar input {
-    border: none;
-    background-color:honeydew;
-}
-
-.search-bar button {
+.menu-icon{
     display: flex;
-    font-size: 13px;
-    border: none;
-    height: 20px;
-    align-items: center;
+    justify-content: center;
 }
 
-.search-bar i {
+.help-icon{
+    display: none;
+}
 
-} */
+.enter-button{
+    display: none;
+}
 
-.user-menu {
+.create-button{
+    display: none;
+
+}
+
+/* .user-menu {
     display: flex;
     width: 10%;
     height: 25px;
@@ -105,7 +102,7 @@ header{
 .user-menu-2 {
     padding-left: 5px;
     padding-bottom: 3px;
-}
+} */
 
 .h1login {
     color: #101828;
@@ -126,6 +123,7 @@ header{
 }
 
 .mainLogin {
+    max-width: 360px;
     display: flex;
     padding: 16px;
     flex-direction: column;
@@ -277,7 +275,7 @@ header{
     padding-top: 16px;
     align-items: center;
     align-self: stretch;
-    gap: 8px;
+    gap: 16px;
 }
 
 .socials p {
@@ -336,9 +334,10 @@ header{
     line-height: 20px;
 }
 
-/* 
+
+
+/*
 .footer-1 {
-    font-size: 8px;
     display: flex;
     justify-content: space-around;
     font-weight: 900;
@@ -362,18 +361,101 @@ header{
 
 
 
-             /**Media queries**/
+/**Media queries**/
 
-@media (min-width: 481px) {
+@media (min-width: 460px){
+    /*Tablet*/
+
+
 
 }
-             
-             
-@media (min-width: 769px) {
-             
+
+
+
+@media (min-width: 768px){
+    /*Desktop*/
+
+.search-icon {
+    display: none;
 }
-             
-             
-@media (min-width: 1280px) {
-             
+
+.menu-icon{
+    display: none;
+}
+
+.help-icon{
+    display: flex;
+}
+
+.left-nav{
+    display: flex;
+    flex-direction: row;
+    width: 33%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+.enter-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    line-height: 24px;
+    border: none;
+    width: fit-content;
+    color: #8c8c8c;
+    background: none;
+    border: none;
+
+}
+
+.create-button{
+    display: flex;
+    padding: 10px 18px;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 8px;
+    flex: 1 0 0;
+    border-radius: 8px;
+    border: 1px solid #7F56D9;
+    background: #7F56D9;
+    width: max-content;
+    color: #FFF;
+    /* Shadow/xs */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+}
+
+.create-button p{
+    display: inline;
+}
+
+
+.search-bar {
+    display: flex;
+    padding: 10px 14px;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    background: #FFF;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    width: 33vw;
+    
+}
+
+.search-bar input {
+    border: none;
+}
+
+.search-bar button {
+    display: flex;
+    font-size: 12px;
+    border: none;
+    height: 24px;
+    align-items: center;
+    background-color: #f2f4f700;
+}
 }

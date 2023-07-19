@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/login.css">
+    <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -14,14 +15,23 @@
             <section class="mobilelogo">
                 <img src="/img/logo-mobile.png" alt="Logo Geo">
             </section>
-            <div class="headerbuttons">
-                <section class="search">
-                    <button><i class="fas fa-search"></i></button>
+            <section class="search-bar">
+                <input type="search" name="barraBusqueda" placeholder="Buscar"><button><i class="fas fa-search"></i></button>
+            </section>
+            <div class="left-nav">
+                <section class="headerbuttons">
+                    <button class="search-icon"><i class="fas fa-search"></i></button>
+                    <button class="menu-icon"><i class="fas fa-bars"></i></button>
+                    <button class="help-icon"><i class="fa-solid fa-question"></i></button>
                 </section>
-                <section class="menu">
-                    <button><i class="fas fa-bars"></i></button>
+                <section>
+                    <button class="enter-button" type="button"> Ingresá </button>
+                </section>
+                <section>
+                    <button class="create-button" type="button"> Creá tu cuenta </button>
                 </section>
             </div>
+
         </nav>
     </header>
 

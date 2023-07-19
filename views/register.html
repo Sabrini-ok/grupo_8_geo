@@ -3,30 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo Cosmetica</title>
+    <title>Iniciar Sesion</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <form class="register-form" action="home.html" method="POST">
-            <h2>Registro - Geo Cosmetica</h2>
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <input type="email" name="email" placeholder="Correo electronico" required>
-            <input type="password" name="password" placeholder="Contrasena" required>
-            <input type="password" name="confirm_password" placeholder="Confirmar contrasena" required>
-            <select name="genero" required>
-                <option value="" disabled selected>Selecciona tu genero</option>
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-                <option value="otro">Otro</option>
-            </select>
-            <button type="submit">Registrarse</button>
-        </form>
-    </div>
-    
-    <footer>
+    <header>
+        <nav class="nav-bar">
+            <section class="mobilelogo">
+                <img src="/img/logo-mobile.png" alt="Logo Geo">
+            </section>
+            <section class="search-bar">
+                <input type="search" name="barraBusqueda" placeholder="Buscar"><button><i class="fas fa-search"></i></button>
+            </section>
+            <div class="left-nav">
+                <section class="headerbuttons">
+                    <button class="search-icon"><i class="fas fa-search"></i></button>
+                    <button class="menu-icon"><i class="fas fa-bars"></i></button>
+                    <button class="help-icon"><i class="fa-solid fa-question"></i></button>
+                </section>
+                <section>
+                    <button class="enter-button" type="button"> Ingresá </button>
+                </section>
+                <section>
+                    <button class="create-button" type="button"> Creá tu cuenta </button>
+                </section>
+            </div>
+
+        </nav>
+    </header>
+    <main class="mainLogin">
+        <div class="formtop">
+            <img src="/img/planeta.png" alt="Geo">
+            <h1 class="h1login">Creá tu cuenta</h1>
+            <p class="description">Te damos la bienvenida a Geo, por favor ingresá tus datos.</p>
+        </div>
+        <div class="userName">
+            <label for="userName">Nombre de Usuario</label>
+            <input type="text" name="userName" id="userName" required placeholder="Ingresá tu email">
+            <span class="feedback"></span>
+        </div>
+
+        <div class="password">
+            <label for="userPassword">Contraseña</label>
+            <input type="password" name="userPassword" id="userPassword" required placeholder="********">
+            <span class="feedback"></span>
+        </div>
+
+        <div class="password">
+            <label for="confirmPassword">Confirmar Contraseña</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" required placeholder="********">
+            <span class="feedback"></span>
+        </div>
+
+        <div class="selectors">
+        <select class="gender" name="genero" required>
+            <option value="" disabled selected>Selecciona tu genero</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select>
+        </div>
+
+        <div class="loginButton">
+            <button type="submit"> Comenzar </button>
+        </div>
+        <div class="socials">
+            <p> O CREÁ TU CUENTA CON</p>
+            <div class="buttongroup">
+                <button type="button"><i class="fa-brands fa-google"></i>Google</button>
+                <button type="button"><i class="fa-brands fa-facebook-f"></i>Facebook</button>
+            </div>
+            <div class="newusersmall">
+                <p>¿Ya tenés cuenta? </p>
+                <button type="button"> Ingresá acá </button>
+            </div>
+        </div>        
+    </main>
+
+<!--     <footer>
         <section class="social-networks">
             <div class="footer-1">
                 <p>Inicio</p>
@@ -40,6 +97,6 @@
                 <i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-whatsapp"></i>
             </div>
         </section>
-    </footer>
+    </footer> -->
 </body>
 </html>
