@@ -1,65 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="img/planeta.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo Cosmetica</title>
+    <title>Iniciar Sesion</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/index.css">
+    <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav class="nav-bar">
-            <section class="burger-menu">
-                <i class="fas fa-bars"></i>
+            <a href="/home" class="mobilelogo">
+                <img src="/img/logo-mobile.png" alt="Logo Geo">
+            </a>
             </section>
             <section class="search-bar">
-                <input type="search" name="barraBusqueda" placeholder="Buscar productos, marcas"><button><i class="fas fa-search"></i></button>
+                <input type="search" name="barraBusqueda" placeholder="Buscar"><button><i class="fas fa-search"></i></button>
             </section>
-            <section class="user-menu">
-                <div class="user-menu-1">
-                    <i class="far fa-user"></i>
-                </div>
-                <div class="user-menu-2">
-                    <i class="fas fa-sort-down"></i>
-                </div>
-            </section>
+            <div class="left-nav">
+                <section class="headerbuttons">
+                    <button class="search-icon"><i class="fas fa-search"></i></button>
+                    <button class="menu-icon"><i class="fas fa-bars"></i></button>
+                    <button class="help-icon"><i class="fa-solid fa-question"></i></button>
+                </section>
+                <section>
+                    <a href="login"><button class="enter-button" type="button"> Ingresá </button> </a>
+                </section>
+                <section>
+                    <a href="registro"><button class="create-button" type="button"> Creá tu cuenta </button></a>
+                </section>
+            </div>
         </nav>
-        <section class="banner">
-
-        </section>
     </header>
+    
     <main>
-        <section>
-            <h1>Geo Cosmetica</h1>
-        </section>
-        <section class="logo">
-            <img src="img/image 2.png">
-        </section>
-        <section>
-            <h2 class="h2home">Productos con descuento</h2>
-        </section>
-        <section class="carrousel">
-            <article>
-                <img src="img/aguaderosas.jpg">
-            </article>
-            <article>
-                <img src="img/dientes.jpg">
-            </article>
-            <article>
-                <img src="img/brechas.jpg">
-            </article>
+        <section class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <img id="slide-1" src="img/_MG_6034.jpg" alt="Pinceles" />
+                    <img id="slide-2" src="img/_MG_5929.jpg" alt="Cepillos" />
+                    <img id="slide-3" src="img/aceite.jpg" alt="Aceites" />
+                </div>
+                <div class="slider-nav">
+                    <a href="#slide-1"></a>
+                    <a href="#slide-2"></a>
+                    <a href="#slide-3"></a>
+                </div>
+            </div>
         </section>
         <section class="productosDestacados">
             <section class="productoDestacado1">
                 <h2 class="h2productosDestacados">Producto Destacado</h2>
-                <img src="img/shampoo.jpg">
+                <img src="img/_MG_6034.jpg">
             </section>
             <section class="productoDestacado2">
                 <h2 class="h2productosDestacados">Producto Destacado</h2>
-                <img src="img/jabones.jpg">
+                <img src="img/_MG_5929.jpg">
             </section>
         </section>
     </main>
@@ -68,9 +66,9 @@
             <div class="footer-1">
                 <p>Inicio</p>
                 <p>Productos</p>
-                <p>Pagos & envíos</p>
-                <p>Preguntas frecuentes</p>
-                <p>¿Dónde encontrarnos?</p>
+                <p>Pagos & envios</p>
+                <p>Preguntas de siempre</p>
+                <p>Donde encontrarnos?</p>
                 <p>Contacto</p>
             </div>
             <div class="footer-2">

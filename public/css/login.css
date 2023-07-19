@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
@@ -30,7 +31,7 @@ header{
 .nav-bar {
     display: flex;
     width: 100%;
-    padding: 0px 16px;
+    padding: 16px;
     justify-content: space-between;
     align-items: center;
 }
@@ -312,6 +313,8 @@ header{
 .buttongroup button i{
     width: 24px;
     height: 24px;
+    display: flex;
+    align-items: center;
 }
 
 .newusersmall{
@@ -324,7 +327,6 @@ header{
 .newusersmall button{
     display: flex;
     align-items: flex-start;
-    align-self: stretch;
     color: #6941C6;
     background: none;
     border: none;
