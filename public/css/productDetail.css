@@ -81,20 +81,57 @@ body {
     padding-bottom: 3px;
 }
 
+.main {
+    width: 100%;
+}
+
 h1 {
-    margin: 30px 0px;
+    margin: 30px 0px 10px 0px;
     text-align: center;
     color:cadetblue
 }
 
-.productDetail-img {
+.masBuscados {
+    margin: auto;
+    width: 90%;
+    flex-direction: column;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
-.productDetail-img img{
-    width: 70%;
+.masBuscados img {
+    width: 49%;
+    align-self: center;
 }
+
+.masBuscados p {
+    padding-top: 5px;
+}
+
+.masPopularP {
+    font-size: 12px;
+    text-align: center;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.productName {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.masBuscados button {
+    width: 20%;
+    align-self: center;
+    font-size: 11px;
+}
+
 
 .product-description {
     height: 50px;
@@ -105,14 +142,24 @@ h1 {
 .payment-methods {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
     width: 50%;
     margin: auto;
     margin-top: 30px;
     margin-bottom: 40px;
 }
 
+.payment-methods-text {
+    text-align: center;
+    font-weight: bold;
+}
+
 .payment-methods i {
     color:gray;
+}
+
+.payment-methods i:hover {
+    color: bisque;
 }
 
 .whatsapp-icon {
