@@ -29,13 +29,13 @@ app.get('/home', (req, res) => {
 });
 
 
-app.get('/registro', (req, res) => {
+app.get('/register', (req, res) => {
     const ruta = path.join(__dirname, '/views/register.html');
     res.sendFile(ruta);
 });
 
 
-app.get('/carrito', (req, res) => {
+app.get('/cart', (req, res) => {
     const ruta = path.join(__dirname, '/views/productCart.html');
     res.sendFile(ruta);
 });
@@ -47,7 +47,7 @@ app.get('/login', (req, res) => {
 });
 
 
-app.get('/detalle', (req, res) => {
+app.get('/productDetail', (req, res) => {
     const ruta = path.join(__dirname, '/views/productDetail.html');
     res.sendFile(ruta);
 });

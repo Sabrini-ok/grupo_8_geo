@@ -24,54 +24,57 @@
                 <section class="headerbuttons">
                     <button class="search-icon"><i class="fas fa-search"></i></button>
                     <button class="menu-icon"><i class="fas fa-bars"></i></button>
-                    <a href="carrito"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
+                    <a href="cart"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
                 </section>
                 <section>
                     <a href="login"><button class="enter-button" type="button"> Ingresá </button> </a>
                 </section>
                 <section>
-                    <a href="registro"><button class="create-button" type="button"> Creá tu cuenta </button></a>
+                    <a href="register"><button class="create-button" type="button"> Creá tu cuenta </button></a>
                 </section>
             </div>
         </nav>
     </header>
     
     <main class="mainLogin">
-        <div class="formtop">
-            <img src="/img/planeta.png" alt="Geo">
-            <h1 class="h1login">Creá tu cuenta</h1>
-            <p class="description">Te damos la bienvenida a Geo, por favor ingresá tus datos.</p>
-        </div>
-        <div class="userName">
-            <label for="userName">Nombre de Usuario</label>
-            <input type="text" name="userName" id="userName" required placeholder="Ingresá tu email">
-            <span class="feedback"></span>
-        </div>
-
-        <div class="password">
-            <label for="userPassword">Contraseña</label>
-            <input type="password" name="userPassword" id="userPassword" required placeholder="********">
-            <span class="feedback"></span>
-        </div>
-
-        <div class="password">
-            <label for="confirmPassword">Confirmar Contraseña</label>
-            <input type="password" name="confirmPassword" id="confirmPassword" required placeholder="********">
-            <span class="feedback"></span>
-        </div>
-
-        <div class="selectors">
-        <select class="gender" name="genero" required>
-            <option value="" disabled selected>Selecciona tu género</option>
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-            <option value="otro">Otro</option>
-        </select>
-        </div>
-
-        <div class="loginButton">
-            <button type="submit"> Comenzar </button>
-        </div>
+        <form action="/" method="GET">
+            <div class="formtop">
+                <img src="/img/planeta.png" alt="Geo">
+                <h1 class="h1login">Creá tu cuenta</h1>
+                <p class="description">Te damos la bienvenida a Geo, por favor ingresá tus datos.</p>
+            </div>
+            <div class="userName">
+                <label for="userName">Nombre de Usuario</label>
+                <input type="text" name="userName" id="userName" required placeholder="Ingresá tu email">
+                <span class="feedback"></span>
+            </div>
+    
+            <div class="password">
+                <label for="userPassword">Contraseña</label>
+                <input type="password" name="userPassword" id="userPassword" required placeholder="********">
+                <span class="feedback"></span>
+            </div>
+    
+            <div class="password">
+                <label for="confirmPassword">Confirmar Contraseña</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" required placeholder="********">
+                <span class="feedback"></span>
+            </div>
+    
+            <div class="selectors">
+            <select class="gender" name="genero" required>
+                <option value="" disabled selected>Selecciona tu género</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+            </div>
+    
+            <div class="loginButton">
+                <button type="submit"> Comenzar </button>
+            </div>
+        </form>
+        
         <div class="socials">
             <p> O CREÁ TU CUENTA CON</p>
             <div class="buttongroup">

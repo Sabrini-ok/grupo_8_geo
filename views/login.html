@@ -24,47 +24,50 @@
                 <section class="headerbuttons">
                     <button class="search-icon"><i class="fas fa-search"></i></button>
                     <button class="menu-icon"><i class="fas fa-bars"></i></button>
-                    <a href="carrito"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
+                    <a href="cart"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
                 </section>
                 <section>
                     <a href="login"><button class="enter-button" type="button"> Ingresá </button> </a>
                 </section>
                 <section>
-                    <a href="registro"><button class="create-button" type="button"> Creá tu cuenta </button></a>
+                    <a href="register"><button class="create-button" type="button"> Creá tu cuenta </button></a>
                 </section>
             </div>
         </nav>
     </header>
 
     <main class="mainLogin">
-        <div class="formtop">
-            <img src="/img/planeta.png" alt="Geo">
-            <h1 class="h1login">Ingresá a tu cuenta</h1>
-            <p class="description">Te damos la bienvenida, por favor entrá los detalles de tu cuenta.</p>
-        </div>
-        <div class="userName">
-            <label for="userName">Nombre de Usuario</label>
-            <input type="text" name="userName" id="userName" required placeholder="Ingresá tu email">
-            <span class="feedback"></span>
-        </div>
-
-        <div class="password">
-            <label for="userPassword">Contraseña</label>
-            <input type="password" name="userPassword" id="userPassword" required placeholder="********">
-            <span class="feedback"></span>
-        </div>
-
-        <div class="selectors">
-        <div class="recordar">
-            <input type="checkbox" id="recordar" name="recordar" checked>
-            <label for="recordar">Recordarme</label>
-        </div>    
-            <button type="button">Olvidé la contraseña</button>
-        </div>
-
-        <div class="loginButton">
-            <button type="submit"> Comenzar </button>
-        </div>
+        <form action="/" method="GET">
+            <div class="formtop">
+                <img src="/img/planeta.png" alt="Geo">
+                <h1 class="h1login">Ingresá a tu cuenta</h1>
+                <p class="description">Te damos la bienvenida, por favor entrá los detalles de tu cuenta.</p>
+            </div>
+            <div class="userName">
+                <label for="userName">Nombre de Usuario</label>
+                <input type="text" name="userName" id="userName" required placeholder="Ingresá tu email">
+                <span class="feedback"></span>
+            </div>
+    
+            <div class="password">
+                <label for="userPassword">Contraseña</label>
+                <input type="password" name="userPassword" id="userPassword" required placeholder="********">
+                <span class="feedback"></span>
+            </div>
+    
+            <div class="selectors">
+            <div class="recordar">
+                <input type="checkbox" id="recordar" name="recordar" checked>
+                <label for="recordar">Recordarme</label>
+            </div>    
+                <button type="button">Olvidé la contraseña</button>
+            </div>
+    
+            <div class="loginButton">
+                <button type="submit"> Comenzar </button>
+            </div>
+        </form>
+        
         <div class="socials">
             <p> O ENTRÁ CON</p>
             <div class="buttongroup">
