@@ -15,8 +15,6 @@ Facundo Undiano: Es de Córdoba Capital, le gusta el cuarteto y tiene 25 años.
 
 Guido Trebliner: Vive en CABA, le gusta ver series y peliculas, y también le gusta el fútbol y la play.
 
-Jessica Baez: Tiene una hermosa nena llamada Martina y le gusta mucho el chipa.
-
 Sabrina Serra Fulles: Es diseñadora, vive en zona norte, le encantan los animales y tiene un perro y un gato.
 
 Tobias Markarian: Recién graduado de sus estudios secundarios. Juega al fútbol y le gusta mucho pasar tiempo en la compu.
