@@ -329,7 +329,24 @@ h1 {
     color: rgb(48, 88, 191);
 }
 
+.footer-2 a[href*="whatsapp"] {
+    color: #25d366;}
 
+.footer-2 a[href*="instagram"] {
+        color: #f09433;}
+    
+.footer-2 a[href*="twitter"] {
+            color: #0096d2;}  
+
+.footer-2 a[href*="facebook"] {
+            color: blue;}             
+
+            .footer-2 a[href*="whatsapp"],
+            .footer-2 a[href*="instagram"],
+            .footer-2 a[href*="twitter"],
+            .footer-2 a[href*="facebook"] {
+             font-size: 35px;
+             margin: 0 15px; }
 
 
              /**Media queries**/
