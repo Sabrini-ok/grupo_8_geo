@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const dotenv = require('dotenv').config();
+const productRoutes = require('./src/routes/products')
 //Para requerir librerias
 
 const app = express();
@@ -11,7 +12,7 @@ const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));   //Para hacer publicos los archivos estaticos
 
 
-app.get('/', (req, res) => {
+app.get('../', (req, res) => {
     const ruta = path.join(__dirname, '/views/index.html');
     res.sendFile(ruta); //Ruta al home 1
 });
