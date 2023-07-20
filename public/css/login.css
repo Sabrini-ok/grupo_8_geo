@@ -123,7 +123,7 @@ header{
     line-height: 24px;
 }
 
-.mainLogin {
+.mainLogin form{
     max-width: 360px;
     display: flex;
     padding: 16px;
