@@ -14,7 +14,7 @@ const productsController = require('./routes/productsRouter');
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));   //Para hacer publicos los archivos estaticos
 
-// app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 app.use('/', mainRouter);
 
