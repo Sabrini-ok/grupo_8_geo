@@ -11,30 +11,7 @@
     <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <nav class="nav-bar">
-            <a href="/home" class="mobilelogo">
-                <img src="/img/logo-mobile.png" alt="Logo Geo">
-            </a>
-            </section>
-            <section class="search-bar">
-                <input type="search" name="barraBusqueda" placeholder="Buscar"><button><i class="fas fa-search"></i></button>
-            </section>
-            <div class="left-nav">
-                <section class="headerbuttons">
-                    <button class="search-icon"><i class="fas fa-search"></i></button>
-                    <button class="menu-icon"><i class="fas fa-bars"></i></button>
-                    <a href="cart"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
-                </section>
-                <section>
-                    <a href="login"><button class="enter-button" type="button"> Ingresá </button> </a>
-                </section>
-                <section>
-                    <a href="register"><button class="create-button" type="button"> Creá tu cuenta </button></a>
-                </section>
-            </div>
-        </nav>
-    </header>
+    <%- include('./partials/header') %>
 
     <main class="mainLogin">
         <form action="/" method="GET">
@@ -81,20 +58,6 @@
         </div>        
     </main>
 
-<!--     <footer>
-        <section class="social-networks">
-            <div class="footer-1">
-                <p>Inicio</p>
-                <p>Productos</p>
-                <p>Pagos & envios</p>
-                <p>Preguntas de siempre</p>
-                <p>Donde encontrarnos?</p>
-                <p>Contacto</p>
-            </div>
-            <div class="footer-2">
-                <i class="fab fa-instagram"></i><i class="fab fa-facebook"></i><i class="fab fa-twitter"></i><i class="fab fa-whatsapp"></i>
-            </div>
-        </section>
-    </footer> -->
+    <!-- <%- include('./partials/footer') %> -->
 </body>
 </html>
