@@ -5,8 +5,8 @@ const path = require('path');
 const fs = require('fs');
 const dotenv = require('dotenv').config();
 const mainRouter = require('./routes/mainRouter');
-const userController = require('./routes/userRouter');
-const productsController = require('./routes/productsRouter');
+const userRouter = require('./routes/userRouter');
+const productRouter = require('./routes/productsRouter');
 // const productRouter = require('./routes/productsRouter');
 //Para requerir librerias
 
@@ -18,8 +18,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', mainRouter);
 
-app.use('/user', userController);
+app.use('/user', userRouter);
 
-app.use('/product', productsController);
+app.use('/product', productRouter);
 
 app.listen(process.env.PORT, () => console.log('Servidor corriendo en puerto ' + process.env.PORT)); //Levantando servidor
