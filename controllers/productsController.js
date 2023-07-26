@@ -3,10 +3,10 @@ const path = require('path');
 
 const controller = {
     productDetail: (req, res) => {
-        res.render(path.resolve(__dirname, '../views/productDetail'));
+        res.render('productDetail');
     },
     cart: (req, res) => {
-        res.render(path.resolve(__dirname, '../views/productCart'));
+        res.render('productCart');
     }
 }
 
