@@ -16,7 +16,7 @@ app.use(express.static(publicPath));   //Para hacer publicos los archivos estati
 
 app.set('view engine', 'ejs');
 
-app.set('views' [
+app.set('views', [
     path.join(__dirname, './views'),
     path.join(__dirname, './views/partials'),
     path.join(__dirname, './views/main'),
