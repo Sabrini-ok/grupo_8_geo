@@ -11,7 +11,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(151deg, #FAFAFA 26.04%, #AB86A7 100%);
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     justify-content: flex-start;
     align-items: center;
     overflow-x: hidden;
