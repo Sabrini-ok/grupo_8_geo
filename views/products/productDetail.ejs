@@ -14,62 +14,13 @@
     <header>
         <%- include('./partials/header') %>
     </header>
-
     <main>
-        
         <section>
             <h1>Los mas buscados</h1>
         </section>
-
-        <div>
-            <section class="masBuscados1">
-                <section class="masBuscados">
-                    <img src="img/aguaderosas.jpg">
-                    <p class="masPopularP">Mas popular</p>
-                    <p class="price">$1000</p>
-                    <p class="productName">Kit rojo</p>
-                    <button type="submit">Agregar al carrito</button>
-                </section>
-                <section class="masBuscados">
-                    <img src="img/dientes.jpg">
-                    <p class="masPopularP">Mas popular</p>
-                    <p class="price">$1000</p>
-                    <p class="productName">Kit verde</p>
-                    <button type="submit">Agregar al carrito</button>
-                </section>
-            </section>
-        </div>
-
-        <div>
-            <section class="masBuscados2">
-                <section class="masBuscados">
-                    <img src="img/aguaderosas.jpg">
-                    <p class="masPopularP">Mas popular</p>
-                    <p class="price">$1000</p>
-                    <p class="productName">Kit rojo</p>
-                    <button type="submit">Agregar al carrito</button>
-                </section>
-                <section class="masBuscados">
-                    <img src="img/dientes.jpg">
-                    <p class="masPopularP">Mas popular</p>
-                    <p class="price">$1000</p>
-                    <p class="productName">Kit verde</p>
-                    <button type="submit">Agregar al carrito</button>
-                </section>
-            </section>
-        </div>
-
-        <section class="payment-methods-text">
-            <p>Payment methods</p>
-        </section>
-        <section class="payment-methods">
-            <i class="fas fa-credit-card"></i>
-            <i class="fas fa-money-bill-wave"></i>
-            <i class="fab fa-bitcoin"></i>
-        </section>
-        <section class="whatsapp-icon">
-            <i class="fab fa-whatsapp"></i>
-        </section>
+        <section>
+            <%- include('./partials/destacados') %>
+        </section>   
     </main>
 
     <footer>

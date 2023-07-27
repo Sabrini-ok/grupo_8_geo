@@ -1,4 +1,3 @@
-
 const path = require('path');
 
 const controller = {
@@ -6,4 +5,5 @@ const controller = {
         res.render('index');
     }
 }
+
 module.exports = controller;

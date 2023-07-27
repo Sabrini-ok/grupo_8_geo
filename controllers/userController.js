@@ -1,4 +1,3 @@
-
 const path = require('path');
 
 const controller = {
@@ -9,6 +8,5 @@ const controller = {
         res.render('login');
     }
 }
-
 
 module.exports = controller;
