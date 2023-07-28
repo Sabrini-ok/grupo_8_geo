@@ -57,8 +57,7 @@ header{
     width: 50%;
     justify-content: flex-end;
     align-items: center;
-    gap: 16px;
-}
+    gap: 16px;}
 
 .headerbuttons{
     display: flex;
@@ -66,13 +65,14 @@ header{
     justify-content: center;
     align-items: center;
     gap: 16px;
-}
+    }
 
 .headerbuttons button{
     color: #8c8c8c;
     background: none;
     border: none;
     width: 16px;
+    cursor:pointer;
 }
 
 .search-bar {
@@ -201,6 +201,7 @@ h1 {
     justify-content: space-around;
     gap: 16px;
     padding: 24px;
+    flex-wrap: wrap;
 }
 
 .h2productosDestacados {
@@ -211,7 +212,7 @@ h1 {
 
 .producto {
     display: flex;
-    width: 48%;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
     flex: 1 0 0;
@@ -290,6 +291,7 @@ h1 {
     background:  #F9F5FF;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
     color: #7F56D9;
+    cursor: pointer;
 }
 
 .secondary{
@@ -304,6 +306,7 @@ h1 {
     background:  #ffffff;
     box-shadow: 0px 1px 2px 0px rgba(97, 97, 97, 0.05);
     color: #787878;
+    cursor: pointer;
 }
 
 
@@ -311,57 +314,51 @@ h1 {
 /* FOOTER */
 
 .social-networks {
-    margin-top: 20px;
-    padding: 20px 0px 30px 0px;
-    background-color: beige;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    font-size: 50px;
+    box-shadow: red;
+    box-shadow:4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
 }
 
-.footer-1 {
-    font-size: 8px;
-    display: flex;
-    justify-content: space-around;
-    font-weight: 900;
-    margin-top: 20px;
-}
+ .pages {
+   display: flex !important;} 
 
-.footer-2 {
+.footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    background:linear-gradient(151deg, #FAFAFA 26.04%, #AB86A7 100%);
+    align-items: center;
+    width: 100vw;
+    padding: 32px;
+    gap: 16px;
 }
 
-.footer-2 i{
+.footer i{
   margin-top: 10px;
   width: 10%;
   text-align: center;
 }
 
-.footer-2 i:hover {
-    color: rgb(48, 88, 191);
-}
+.social-networks i:hover {
+    color: rgb(48, 88, 191);}
 
-.footer-2 a[href*="whatsapp"] {
+.social-networks a[href*="whatsapp"] {
     color: #25d366;}
 
-.footer-2 a[href*="instagram"] {
-        color: #f09433;}
+.social-networks a[href*="instagram"] {
+    color: rgb(177, 95, 235)}
     
-.footer-2 a[href*="twitter"] {
+.social-networks a[href*="twitter"] {
             color: #0096d2;}  
 
-.footer-2 a[href*="facebook"] {
+.social-networks a[href*="facebook"] {
             color: blue;}             
 
-            .footer-2 a[href*="whatsapp"],
-            .footer-2 a[href*="instagram"],
-            .footer-2 a[href*="twitter"],
-            .footer-2 a[href*="facebook"] {
-             font-size: 35px;
-             margin: 0 15px; }
-
-
-
-
-
+            
 /* FORMS */
 
 .h1login {
@@ -657,6 +654,7 @@ h1 {
     color: #8c8c8c;
     background: none;
     border: none;
+    cursor: pointer;
 
 }
 
@@ -673,6 +671,7 @@ h1 {
     width: max-content;
     color: #FFF;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    cursor: pointer;
 
 }
 
@@ -768,14 +767,36 @@ h1 {
 	opacity: 1;
 }
 
+/* FOOTER */
 
+.pages {
+    font-size: 15px;
+    display: none;
+    justify-content: space-around;
+    font-weight: 900;
+    margin-top: 20px;
+    gap: 30px;
+}
 
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    width: 100vw;
+    padding: 32px;
+    gap: 16px;
+}
 
+.footer i{
+  margin-top: 10px;
+  width: 10%;
+  text-align: center;
+}
+            
 
-
-
-             
-             
+                          
 @media (min-width: 1280px) {
              
 }
