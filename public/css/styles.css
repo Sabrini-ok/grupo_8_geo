@@ -326,6 +326,12 @@ h1 {
  .pages {
    display: flex !important;} 
 
+ .pages a {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;}
+
+
 .footer {
     display: flex;
     flex-direction: column;
