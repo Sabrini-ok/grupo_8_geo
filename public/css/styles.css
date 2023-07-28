@@ -324,7 +324,13 @@ h1 {
 }
 
  .pages {
-   display: none;} 
+   display: none;}
+   
+ .pages a {
+    color: black;
+    font-weight: bold;
+font-size: 18px;}
+
 
 .footer {
     display: flex;
