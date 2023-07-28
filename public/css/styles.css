@@ -324,7 +324,7 @@ h1 {
 }
 
  .pages {
-   display: flex !important;} 
+   display: none;} 
 
 .footer {
     display: flex;
@@ -706,9 +706,6 @@ h1 {
     align-items: center;
     background-color: #f2f4f700;
 }
-}
-
-
 
 
 .slider-container {
@@ -771,7 +768,7 @@ h1 {
 
 .pages {
     font-size: 15px;
-    display: none;
+    display: flex;
     justify-content: space-around;
     font-weight: 900;
     margin-top: 20px;
@@ -794,7 +791,7 @@ h1 {
   width: 10%;
   text-align: center;
 }
-            
+}            
 
                           
 @media (min-width: 1280px) {
