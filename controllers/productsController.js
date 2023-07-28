@@ -9,6 +9,10 @@ const controller = {
     },
     cart: (req, res) => {
         res.render('productCart');
+    },
+
+    edit: (req, res) => {
+        res.render('editProduct');
     }
 }
 

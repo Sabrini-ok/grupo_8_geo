@@ -5,7 +5,9 @@ const productController = require('../controllers/productsController');
 
 router.get('/cart', productController.cart);
 
-router.get('/:id', productController.productDetail);
+router.get('/detail', productController.productDetail);
+
+router.get('/edit', productController.edit);
 
 
 module.exports = router;
