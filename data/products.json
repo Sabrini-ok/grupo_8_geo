@@ -1,0 +1,28 @@
+
+[
+    {
+        "id": 1,
+        "title": "Licuadora",
+        "price": 300
+    },
+    {
+        "id": 2,
+        "title": "Microondas",
+        "price": 800
+    },
+    {
+        "id": 3,
+        "title": "Laptop",
+        "price": 1000
+    },
+    {
+        "id": 4,
+        "title": "Heladera",
+        "price": 3000
+    },
+    {
+        "id": 5,
+        "title": "Lavarropas",
+        "price": 2500
+    }
+]
