@@ -14,8 +14,12 @@ const productRouter = require('./routes/productsRouter');
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));   //Para hacer publicos los archivos estaticos
 
-app.set('view engine', 'ejs');
 
+app.use(express.urlencoded({extended: true}));
+app.use(express.json()); //Con estas dos lineas podemos acceder desde el controller a lo que el usuario inserta en el formulario por POST (req.body)
+
+
+app.set('view engine', 'ejs');
 app.set('views', [
     path.join(__dirname, './views'),
     path.join(__dirname, './views/partials'),
