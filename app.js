@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const fs = require('fs');
+const methodOverride = require('method-override');
 const dotenv = require('dotenv').config();
 const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
@@ -28,10 +29,11 @@ app.set('views', [
     path.join(__dirname, './views/products')
 ]);
 
+app.use(methodOverride('_method')); //Se necesita ara poder eliminar o editar
+
+
 app.use('/', mainRouter);
-
 app.use('/user', userRouter);
-
 app.use('/product', productRouter);
 
 app.listen(process.env.PORT, () => console.log('Servidor corriendo en puerto ' + process.env.PORT)); //Levantando servidor
