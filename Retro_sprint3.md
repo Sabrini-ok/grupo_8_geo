@@ -16,6 +16,7 @@ Prometimos como grupo enfocarnos más para que las cosas positivas sean muchas m
 - Al tener clase tan seguido es muy dificil poder estar tanto tiempo encima del proyecto y eso nos perjudica
 - Somos 4 integrantes y siempre hay alguno que entiende más que otro
 - Es súper necesario dedicar casi toda la semana al curso y a veces con todas las actividades individuales se dificulta
+- De a poco estamos perdiendo la puntualidad
 
 **Acciones**
 
