@@ -14,3 +14,8 @@ Quedamos en tener reuniones semanales los días martes a las 10am. Idealmente de
 
 >>> Reunión 27/07<<<
 Actualizamos los css de todas las páginas e hicimos un partial de los productos destacados para que aparezcan en la home y en el detalle. Notamos que las rutas a las imágenes van ok desde la home pero no en las otras y no pudimos entender por qué. De todas formas, Sabri luego lo solucionó. Queda pendientes cositas del sprint 3 y mejorar la vista para el consumidor, ya que hay cosas "rotas". También debemos hacerlo responsive y crear una solapa para que el admin tenga sus ventajas.
+
+--------------------------------------
+
+>>> Reunión 07/08<<<
+Vimos las correcciones que nos hicieron los profes en profundidas y respondimos las dudas para dejar cerrado al 100% el sprint 2. El sprint 3 que se entrega mañana está casi terminado y entre hoy y mañana vamos a cerrar las últimas cosas. Esta fue una reunión agregada ya que nuestras weeklys son los martes que mañana tendremos.
