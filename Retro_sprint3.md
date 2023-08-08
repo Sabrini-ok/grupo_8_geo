@@ -17,6 +17,7 @@ Prometimos como grupo enfocarnos más para que las cosas positivas sean muchas m
 - Somos 4 integrantes y siempre hay alguno que entiende más que otro
 - Es súper necesario dedicar casi toda la semana al curso y a veces con todas las actividades individuales se dificulta
 
+
 **Acciones**
 
 - Ponernos más la camiseta del equipo y dejar la pereza de lado para enfocarnos 100% en este proyecto y que salga lo mejor posible
@@ -24,4 +25,4 @@ Prometimos como grupo enfocarnos más para que las cosas positivas sean muchas m
 - Priorizar lo grupal por sobre lo individual
 - Animarse a probar y a fallar
 
------------------------------------
+
