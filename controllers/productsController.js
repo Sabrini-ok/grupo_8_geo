@@ -34,7 +34,7 @@ const controller = {
 
         const createdProduct = productModel.createProduct(newProduct); //Le pasamos la variable donde almacenamos lo que ingreso el cliente a la funcion del modelo de createProduct. Mediante esta linea de codigo ahora el controller si puede acceder al id del producto
         
-        res.redirect('/products/' + createdProduct.id + '/detail');
+        res.redirect('/product/' + createdProduct.id + '/detail');
         //Desde los POST no renderizamos vistas, solo redireccionamos
         // res.redirect('/products');
     }

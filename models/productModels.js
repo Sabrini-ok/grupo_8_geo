@@ -23,7 +23,7 @@ const modelo = {
     },
 
     createProduct: (bodyData) => { //Al array de productos ya existentes hay que pushearle el nuevo prod
-        let products = model.findAll(); 
+        let products = modelo.findAll(); 
 
         const lastProId = products[products.length - 1].id; //Conseguimos el id del ultimo elemento
 
@@ -35,7 +35,7 @@ const modelo = {
         products.push(newProduct);
 
         const jsonData = JSON.stringify(products); //Convierte JS a formato json
-        fs.writeFileSync(model.fileRoute, jsonData, 'utf-8'); //Recibe 3 parametros. La ruta esta guardada en variable
+        fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8'); //Recibe 3 parametros. La ruta esta guardada en variable
 
         return newProduct; //Retornamos el producto que se creo en la base de datos
     }
