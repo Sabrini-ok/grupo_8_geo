@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="/public/img/planeta.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List</title>
+    <title>Geo Cosmética</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section>
-        <a href="/products/create">Crear un producto</a>
+    <article>
+        <a href="/products/create"><button class="primary" type="button">Crear Producto</button></a>
         <% products.forEach(producto => { %>
-            <article>
-                <h1><%= producto.productName %></h1>
-                <h3><%= producto.productDescription %></h3>
-            </article>
+            <section class="producto">
+                <div class="img-container"><img src="<%= producto.imageUpload %>"></div>
+                <div class="precio">
+                    <h2><%= producto.productPrice %></h2>
+                    <p><%= producto.masBuscado %></p>
+                </div>
+                <div class="descripcion">
+                    <h4><%= producto.productName %></h4>
+                    <p><%= producto.productDescription %></p>    
+            </section>
         <% }) %>
-    </section>
+    </article>
+    
 </body>
 </html>

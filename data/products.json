@@ -178,6 +178,14 @@
         "productPrice": 19,
         "imageUpload": "http://dummyimage.com/125x100.png/dddddd/000000",
         "masBuscado": true
+    },
+    {
+        "id": 21,
+        "productName": "prueba",
+        "productDescription": "descrip",
+        "productCategory": "masculino",
+        "productPrice": "222",
+        "imageUpload": "Mousse-de-arroz-con-leche.jpg",
+        "masBuscado": "on"
     }
-
 ]
