@@ -28,8 +28,12 @@ const controller = {
 
     postProduct: (req, res) => {
         const newProduct = { //Guardamos en una variable lo que ingresa el cliente en el formulario
-            title: req.body.title, //De esta forma se le puede agregar un poco de seguridad al formulario
-            price: req.body.price
+            productName: req.body.productName, //De esta forma se le puede agregar un poco de seguridad al formulario
+            productDescription: req.body.productDescription,
+            productCategory: req.body.productCategory,
+            productPrice: req.body.productPrice,
+            imageUpload: req.body.imageUpload,
+            masBuscado: req.body.masBuscado
         }
 
         const createdProduct = productModel.createProduct(newProduct); //Le pasamos la variable donde almacenamos lo que ingreso el cliente a la funcion del modelo de createProduct. Mediante esta linea de codigo ahora el controller si puede acceder al id del producto

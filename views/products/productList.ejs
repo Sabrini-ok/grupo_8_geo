@@ -10,8 +10,8 @@
         <a href="/products/create">Crear un producto</a>
         <% products.forEach(producto => { %>
             <article>
-                <h1><%= producto.title %></h1>
-                <h3><%= producto.price %></h3>
+                <h1><%= producto.productName %></h1>
+                <h3><%= producto.productDescription %></h3>
             </article>
         <% }) %>
     </section>

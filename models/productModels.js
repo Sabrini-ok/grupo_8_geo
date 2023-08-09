@@ -8,11 +8,11 @@ const modelo = {
 
     findAll: () => {
         //Buscamos el contenido del archivo JSON
-        const jsonData = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf-8');
+        const jsonData = fs.readFileSync(modelo.fileRoute, 'utf-8');
         //Convertimos el JSON en JS
         const products = JSON.parse(jsonData);
 
-        return products; //Retorno un array con los productos productos
+        return products; //Retorno un array con los productos
     },
 
     findById: (id) => {
