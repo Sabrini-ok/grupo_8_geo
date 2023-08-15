@@ -6,6 +6,9 @@ const controller = {
     },
     login: (req, res) => {
         res.render('login');
+    },
+    profile: (req, res) => {
+        return res.render ('profile');
     }
 }
 

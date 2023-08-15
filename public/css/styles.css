@@ -210,6 +210,12 @@ h1 {
     justify-content: center;
 }
 
+.productList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .producto {
     display: flex;
     width: 100%;
