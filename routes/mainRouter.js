@@ -4,6 +4,6 @@ const router = express.Router(); //Guarda la ejecucion del metodo router de expr
 const mainController = require('../controllers/mainController');
 
 
-router.get('/index', mainController.index);
+router.get('/', mainController.index);
 
 module.exports = router;
