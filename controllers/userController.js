@@ -6,7 +6,7 @@ const controller = {
     },
 
     processRegister: (req, res) => {
-        return res.send ('Ok viniste por post')
+        return res.send (req.body)
     },
 
     login: (req, res) => {
