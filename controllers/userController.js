@@ -2,10 +2,15 @@ const path = require('path');
 
 const controller = {
     register: (req, res) => {
-        res.render('register');
+        return res.render('register');
     },
+
+    processRegister: (req, res) => {
+        return res.send ('Ok viniste por post')
+    },
+
     login: (req, res) => {
-        res.render('login');
+        return res.render('login');
     },
     profile: (req, res) => {
         return res.render ('profile');
