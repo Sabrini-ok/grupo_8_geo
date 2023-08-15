@@ -16,7 +16,7 @@ router.get('/list', productController.getList);
 router.get('/:id/detail', productController.getDetail);
 
 //@Get - /products/create
-router.get('/createProduct', productController.getCreate); //Ruta para crear un producto
+router.get('/create', productController.getCreate); //Ruta para crear un producto
 
 //@POST - /products
 router.post('/', productController.postProduct);

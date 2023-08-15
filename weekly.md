@@ -18,4 +18,9 @@ Actualizamos los css de todas las páginas e hicimos un partial de los productos
 --------------------------------------
 
 >>> Reunión 07/08<<<
-Vimos las correcciones que nos hicieron los profes en profundidas y respondimos las dudas para dejar cerrado al 100% el sprint 2. El sprint 3 que se entrega mañana está casi terminado y entre hoy y mañana vamos a cerrar las últimas cosas. Esta fue una reunión agregada ya que nuestras weeklys son los martes que mañana tendremos.
+Vimos las correcciones que nos hicieron los profes en profundidad y respondimos las dudas para dejar cerrado al 100% el sprint 2. El sprint 3 que se entrega mañana está casi terminado y entre hoy y mañana vamos a cerrar las últimas cosas. Esta fue una reunión agregada ya que nuestras weeklys son los martes que mañana tendremos.
+
+--------------------------------------
+
+>>> Reunión 15/08<<<
+Nos juntamos dos de cuatro integrantes y revisamos las correcciones del sprint anteiror y los pendientes para el siguiente. Además corregimos errores, terminamos de pulir cosas del sprint 4 y actualizamos el tablero de trabajo. Generamos una lista de backlog con cosas para hacer. Nos quedan ver unas cosas con el resto del equipo para poder entregar el sprint 4 y definir las buenas prácticas.
