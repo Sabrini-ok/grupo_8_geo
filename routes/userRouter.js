@@ -1,9 +1,7 @@
-
 const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
-
 
 const { body } = require('express-validator')
 
@@ -21,11 +19,26 @@ const storage = multer.diskStorage ({
 const uploadFile = multer ({ storage })
 
 const validations = [
-    body('userName').notEmpty(),
-    body('email').notEmpty(),
-    body('userPassword').notEmpty(),
-    body('avatar').notEmpty(),
-    body('gender').notEmpty(),
+    body('userName').notEmpty().withMessage('Escribí tu nombre por favor'),
+    body('email')
+        .notEmpty().withMessage('Escribí tu email por favor').bail()
+        .isEmail().withMessage('El formato de correo electrónico es inválido'),
+    body('userPassword').notEmpty().withMessage('Usá al menos 8 digitos e incluí al menos un caracter especial'),
+    body('avatar').custom((value, { req }) =>{
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.gif'];
+
+        if (!file){
+            throw new Error ('Subí una imagen por favor')
+        } else {
+            let fileExtension = path.extname(file.originalname);
+            if (!acceptedExtensions.includes(fileExtension)) {
+                throw new Error (`Las extensiones permitidas son ${acceptedExtensions.join(',')}`);
+            }
+        }
+        return true;
+    }),
+    body('gender').notEmpty().withMessage('Seleccioná una opción por favor'),
 ]
 
 const userController = require('../controllers/userController');

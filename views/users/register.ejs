@@ -25,36 +25,86 @@
             </div>
             <div class="ourInputs">
                 <label for="userName">Nombre de Usuario</label>
-                <input type="text" name="userName" id="userName" required placeholder="Ingresá tu nombre">
-                <span class="feedback"></span>
+                <input 
+                type="text" 
+                name="userName" 
+                id="userName" 
+                placeholder="Ingresá tu nombre" 
+                class="form-control <%= locals.errors && errors.userName ? 'is-invalid' : null %>" 
+                value="<% locals.oldData ? oldData.userName : null %>"
+                >
+                <% if (locals.errors && errors.userName) { %>
+                    <div class = "text-danger">
+                        <%= errors.userName.msg %>
+                    </div> 
+                <% } %>
+                
             </div>
 
             <div class="ourInputs">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" required placeholder="Ingresá tu email">
-                <span class="feedback"></span>
+                <input 
+                type="text" 
+                name="email" 
+                id="email" 
+                placeholder="Ingresá tu email" 
+                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
+                value="<% locals.oldData ? oldData.email : null %>"
+                >
+                <% if (locals.errors && errors.email) { %>
+                    <div class = "text-danger">
+                        <%= errors.email.msg %>
+                    </div> 
+                <% } %>
             </div>
     
             <div class="ourInputs">
                 <label for="userPassword">Contraseña</label>
-                <input type="password" name="userPassword" id="userPassword" required placeholder="********">
-                <span class="feedback"></span>
+                <input 
+                type="password" 
+                name="userPassword" 
+                id="userPassword" 
+                placeholder="********">
+                <% if (locals.errors && errors.userPassword) { %>
+                    <div class = "text-danger">
+                        <%= errors.userPassword.msg %>
+                    </div> 
+                <% } %>
             </div>
 
             <div class="ourInputs">
                 <label for="avatar">Foto de perfil</label>
-                <input type="file" id="avatar" name="avatar" required placeholder="Seleccionar archivo">
-                <span class="feedback"></span>
+                <input 
+                type="file" 
+                id="avatar" 
+                name="avatar" 
+                placeholder="Seleccionar archivo">
+                <% if (locals.errors && errors.avatar) { %>
+                    <div class = "text-danger">
+                        <%= errors.avatar.msg %>
+                    </div> 
+                <% } %>
             </div>
     
             <div class="ourInputs">
             <label for="gender">Género</label>
-            <select class="gender" name="genero" required>
+            <select class="gender" name="genero">
                 <option value="" disabled selected>Selecciona tu género</option>
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-                <option value="otro">Otro</option>
+                <% 
+                let gender = ['Femenino', 'Masculino', 'Sin especificar']
+                %>
+                <% for (const oneGender of gender) { %>
+                    <option 
+                    value="<%= oneGender %>"
+                    <%= locals.oldData && (oneGender === oldData.gender) ? 'selected' : null %>
+                    > <%= oneGender %> </option>
+                <% } %>
             </select>
+            <% if (locals.errors && errors.gender) { %>
+                <div class = "text-danger">
+                    <%= errors.gender.msg %>
+                </div> 
+            <% } %>
             </div>
     
             <div class="loginButton">

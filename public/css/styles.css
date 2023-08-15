@@ -452,6 +452,14 @@ font-size: 18px;}
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
 
+.form-control {
+    border-color: rgb(248, 60, 88);
+}
+
+.text-danger {
+    font-size: 12px;
+    color: rgb(248, 60, 88);
+}
 
 .selectors{
     display: flex;
