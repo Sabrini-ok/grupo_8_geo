@@ -1,5 +1,6 @@
 const path = require('path');
 const productModel = require('../models/productModels');
+const { validationResult } = require('express-validator');
 
 const controller = {
   
