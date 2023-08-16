@@ -1,43 +1,52 @@
 const fs = require('fs');
 const path = require('path');
+const uuid = require('uuid');
+const bcrypt = require('bcrypt')
 
 const modelo = {
 
     fileRoute: path.join(__dirname, '../data/users.json'),
 
-    findAll: () => {
-   
-        const jsonData = fs.readFileSync(modelo.fileRoute, 'utf-8');
-       
-        const users = JSON.parse(jsonData);
+    create: (userData) => {
+        const emailInUse = modelo.findByEmail(userData.email);
 
-        return users; 
-    },
-
-    findById: (id) => {
-        const users = modelo.findAll();
-        const selectedUser = users.find(currentUser => currentUser.id == id);
-
-        return selectedUser;
-    },
-
-    createUser: (bodyData) => { 
-        let users = modelo.findAll(); 
-
-        const lastUserId = users[users.length - 1].id;
+        if (emailInUse) {
+            return ({
+                error: 'Email is already in use'
+            });
+        }
+        let users = JSON.parse(fs.readFileSync(modelo.fileRoute, 'utf-8'));
 
         const newUser = {
-            id: lastUserId + 1, 
-            ...bodyData 
-        }
-        
+            id: uuid.v4(),
+            ...userData
+        };
+
+        newUser.password = bcrypt.hashSync(newUser.password, 12);
+
         users.push(newUser);
 
-        const jsonData = JSON.stringify(users);
-        fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8'); 
-        
+        const usersJson = JSON.stringify(users);
+
+        fs.writeFileSync(model.fileRoute, usersJson, 'utf-8');
+
         return newUser;
+
+    },
+
+    findByEmail: (email) => {
+        const users = JSON.parse(fs.readFileSync(modelo.fileRoute, 'utf-8'));
+
+        const coincidence = users.find(usuarioActual => usuarioActual.email === email);
+
+        return coincidence || null;
+
+    },
+
+    findAll: () => {
+        
     }
+
 };
 
 

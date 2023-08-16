@@ -1,6 +1,7 @@
 const path = require('path');
 const userModel = require('../models/userModels');
 const { validationResult } = require('express-validator');
+const bcrypt = require('bcrypt')
 
 const controller = {
 
@@ -23,8 +24,23 @@ const controller = {
     },
 
     login: (req, res) => {
-        return res.render('login');
+        const userInJson = userModel.findByEmail(req.body.email);
+
+        if (!userInJson) {
+            return res.redirect('/user/login?error=El email o la contraseña son incorrectos');
+        }
+            
+        const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
+
+        if (validPw) {
+            res.send('La contraseña coincide');
+        } else {
+            res.redirect('/user/login?error=El email o la contraseña son incorrectos');
+        }
+
+        
     },
+
     profile: (req, res) => {
         return res.render ('profile');
     }
