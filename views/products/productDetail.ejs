@@ -15,10 +15,22 @@
         <%- include('./partials/header') %>
     </header>
     <main>
+        <article class="productDetail">
+            <% products.forEach(producto => { %>
+                <section class="producto">
+                    <div class="img-container"><img src="<%= producto.imageUpload %>"></div>
+                    <div class="precio">
+                        <h2><%= producto.productPrice %></h2>
+                        <p><%= producto.masBuscado %></p>
+                    </div>
+                    <div class="descripcion">
+                        <h4><%= producto.productName %></h4>
+                        <p><%= producto.productDescription %></p>    
+                </section>
+            <% }) %>
+        </article>
         <section>
             <h1>Los mas buscados</h1>
-        </section>
-        <section>
             <%- include('.'+'./partials/destacados') %>
         </section>   
     </main>

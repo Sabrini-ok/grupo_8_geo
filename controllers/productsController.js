@@ -20,7 +20,7 @@ const controller = {
     getDetail: (req, res) => {
         const productId = req.params.id;
         const selectedProduct = productModel.findById(productId);
-        res.render('productDetail', {product: selectedProduct});
+        res.render('detail', {product: selectedProduct});
     },
 
     getCreate: (req, res) => {

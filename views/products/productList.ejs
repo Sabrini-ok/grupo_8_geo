@@ -11,21 +11,30 @@
     <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <article class="productList">
-        <a href="/product/create"><button class="primary" type="button">Crear Producto</button></a>
-        <% products.forEach(producto => { %>
-            <section class="producto">
-                <div class="img-container"><img src="<%= producto.imageUpload %>"></div>
-                <div class="precio">
-                    <h2><%= producto.productPrice %></h2>
-                    <p><%= producto.masBuscado %></p>
-                </div>
-                <div class="descripcion">
-                    <h4><%= producto.productName %></h4>
-                    <p><%= producto.productDescription %></p>    
-            </section>
-        <% }) %>
-    </article>
-    
+    <header>
+        <%- include('./partials/header') %>
+    </header>
+    <main>
+        <div class="topList">
+            <h3>Listado de productos</h3>
+            <a href="/product/create"><button class="primary" type="button">Crear Producto</button></a>
+        </div>
+        <article class="productList">
+            <% products.forEach(producto => { %>
+                <section class="productoDeLista">
+                    <div class="img-container"><img src="<%= producto.imageUpload %>"></div>
+                    <div class="precioDeLista">
+                        <h2><%= producto.productPrice %></h2>
+                        <p><%= producto.masBuscado %></p>
+                    </div>
+                    <div class="descripcionDeLista">
+                        <h4><%= producto.productName %></h4>
+                        <p><%= producto.productDescription %></p>  
+                        <a href=""><button class="secondary" type="button"> Ver Detalle </button> </a>  
+                    </div>
+                </section>
+            <% }) %>
+        </article>
+    </main>
 </body>
 </html>
