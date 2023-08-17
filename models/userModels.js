@@ -45,6 +45,10 @@ const modelo = {
 
     findAll: () => {
         
+    },
+
+    findByPk: (id) => {
+
     }
 
 };

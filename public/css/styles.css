@@ -228,17 +228,6 @@ h1 {
     box-shadow: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
 }
 
-.productoDeLista {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 8px;
-    background: #FFF;
-    box-shadow: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
-}
-
 .topList{
     display: flex;
     width: 100%;
@@ -267,16 +256,6 @@ h1 {
     padding: 16px;
 }
 
-.precioDeLista{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-    align-self: stretch;
-    padding: 16px;
-    align-items: center;
-}
-
 .precio h2{
     font-size: 28px;
     color: black;
@@ -294,15 +273,6 @@ h1 {
     justify-content: space-between;
     gap: 4px;
     padding: 0px 16px;
-}
-
-.descripcionDeLista{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 0px 16px;
-    align-items: center;
 }
 
 .descripcion h4{
@@ -356,6 +326,41 @@ h1 {
     cursor: pointer;
 }
 
+/* LISTADO DE PRODUCTOS */
+
+.productoDeLista {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content:flex-start ;
+    border-radius: 8px;
+    background: #FFF;
+    padding: 8px;
+    gap: 24px;
+    box-shadow: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+}
+
+.precioDeLista{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-items: center;
+}
+
+.descripcionDeLista{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+}
+
+.productoDeLista img{
+    width: 100px;
+    object-fit: cover;
+    border-radius: 8px
+}
 
 
 /* FOOTER */
