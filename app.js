@@ -36,4 +36,4 @@ app.use('/', mainRouter);
 app.use('/user', userRouter);
 app.use('/product', productRouter);
 
-app.listen(process.env.PORT, () => console.log('Servidor corriendo en puerto ' + process.env.PORT)); //Levantando servidor
+app.listen(process.env.PORT || 3000, () => console.log('Servidor corriendo en puerto ' + process.env.PORT)); // Run the server

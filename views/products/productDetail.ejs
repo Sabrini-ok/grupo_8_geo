@@ -16,18 +16,19 @@
     </header>
     <main>
         <article class="productDetail">
-            <% products.forEach(producto => { %>
+            
+            
                 <section class="producto">
-                    <div class="img-container"><img src="<%= producto.imageUpload %>"></div>
+                    <div class="img-container"><img src="/img/prodImages/<%=products.imageUpload %>"></div>
                     <div class="precio">
-                        <h2><%= producto.productPrice %></h2>
-                        <p><%= producto.masBuscado %></p>
+                        <h2>$ <%= products.productPrice %></h2>
+                        <p><%= products.masBuscado %></p>
                     </div>
                     <div class="descripcion">
-                        <h4><%= producto.productName %></h4>
-                        <p><%= producto.productDescription %></p>    
+                        <h4><%= products.productName %></h4>
+                        <p><%= products.productDescription %></p>    
                 </section>
-            <% }) %>
+           
         </article>
         <section>
             <h1>Los mas buscados</h1>

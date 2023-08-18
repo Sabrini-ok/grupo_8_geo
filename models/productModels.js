@@ -29,6 +29,7 @@ const modelo = {
         const newProduct = {
             id: lastProId + 1, //Para que se cree un producto despues del ultimo id existente
             ...bodyData //Spread operator que nos tira todos los datos de este objeto
+            
         }
         
         products.push(newProduct);

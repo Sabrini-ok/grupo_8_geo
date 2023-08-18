@@ -18,11 +18,14 @@ const storage = multer.diskStorage ({
 
 const uploadFile = multer ({ storage })
 
+
+
 const validations = [
     body('productName').notEmpty(),
     body('productDescription').notEmpty(),
     body('productCategory').notEmpty(),
-    body('productPrice').notEmpty(),
+    body('productPrice').notEmpty().isNumeric(),
+    body('imageUpload').notEmpty(),
     body('masBuscado').notEmpty,
 ]
 
@@ -36,7 +39,7 @@ router.get('/edit', productController.edit);
 router.get('/list', productController.getList);
 
 //@Get - /products/:id/detail
-router.get('/detail', productController.getDetail);
+router.get('/:id/detail', productController.getDetail);
 
 //@Get - /products/create
 router.get('/create', productController.getCreate); //Ruta para crear un producto

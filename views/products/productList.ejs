@@ -22,7 +22,7 @@
         <article class="productList">
             <% products.forEach(producto => { %>
                 <section class="productoDeLista">
-                    <div class="img-container"><img src="<%= producto.imageUpload %>"></div>
+                    <div class="img-container"><img src="/img/prodImages/<%=producto.imageUpload %>"></div>
                     <div class="precioDeLista">
                         <h2>$ <%= producto.productPrice %></h2>
                         <p><%= producto.masBuscado %></p>

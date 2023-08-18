@@ -20,7 +20,7 @@ const controller = {
     getDetail: (req, res) => {
         const productId = req.params.id;
         const selectedProduct = productModel.findById(productId);
-        res.render('detail', {product: selectedProduct});
+        res.render('productDetail', {products: selectedProduct});
     },
 
     getCreate: (req, res) => {
@@ -33,7 +33,7 @@ const controller = {
             productDescription: req.body.productDescription,
             productCategory: req.body.productCategory,
             productPrice: req.body.productPrice,
-            imageUpload: req.body.imageUpload,
+            imageUpload: req.file.filename,
             masBuscado: req.body.masBuscado
         }
 
