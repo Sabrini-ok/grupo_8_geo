@@ -24,3 +24,7 @@ Vimos las correcciones que nos hicieron los profes en profundidad y respondimos 
 
 >>> Reunión 15/08<<<
 Nos juntamos dos de cuatro integrantes y revisamos las correcciones del sprint anteiror y los pendientes para el siguiente. Además corregimos errores, terminamos de pulir cosas del sprint 4 y actualizamos el tablero de trabajo. Generamos una lista de backlog con cosas para hacer. Nos quedan ver unas cosas con el resto del equipo para poder entregar el sprint 4 y definir las buenas prácticas.
+
+--------------------------------------
+
+>>> Reunión 22/08<<<
