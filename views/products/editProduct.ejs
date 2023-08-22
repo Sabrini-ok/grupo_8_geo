@@ -19,7 +19,7 @@
         <div class="subtitle">
             <p class="description">Editá este producto del listado.</p>
         </div>
-        <form action="/" method="GET">
+        <form action="/products/<%= product.id %>/edit?_method=PUT" method="post">
             <div class="formLeft">
                 <div class="ourInputs">
                     <label for="productName">Nombre de producto</label>

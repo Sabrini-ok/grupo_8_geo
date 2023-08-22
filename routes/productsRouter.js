@@ -34,7 +34,7 @@ const productController = require('../controllers/productsController');
 // @GET - /products
 router.get('/cart', productController.cart);
 
-router.get('/edit', productController.edit);
+router.get('/:id/edit', productController.getEdit);
 
 router.get('/list', productController.getList);
 
@@ -47,5 +47,9 @@ router.get('/create', productController.getCreate); //Ruta para crear un product
 //@POST - /products
 router.post('/', uploadFile.single('imageUpload'), productController.postProduct);
 
+// @DELETE - /products/:id/delete
+router.delete('/:id/delete', productController.deleteProduct);
+
+router.put('/:id/edit', productController.updateProduct);
 
 module.exports = router;

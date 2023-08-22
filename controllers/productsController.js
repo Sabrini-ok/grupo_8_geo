@@ -8,10 +8,6 @@ const controller = {
         res.render('productCart');
     },
 
-    edit: (req, res) => {
-        res.render('editProduct');
-    },
-
     getList: (req, res) => {
         const products = productModel.findAll(); //Accedo a un metodo de productModel
         res.render('productList', {products}); //Hacerlo asi es lo mismo que poner {products: products}
@@ -42,7 +38,41 @@ const controller = {
         res.redirect('/product/' + createdProduct.id + '/detail');
         //Desde los POST no renderizamos vistas, solo redireccionamos
         // res.redirect('/products');
+    },
+
+    getEdit: (req, res) => {
+        const product = productModel.findById(Number(req.params.id));
+
+        res.render('editProduct', { product });
+    },
+
+    deleteProduct: (req, res) => {
+        productModel.destroy(Number(req.params.id));
+
+        res.redirect('/product/');
+    },
+
+    updateProduct: (req, res) => {
+        let updatedProduct = {
+            id: Number(req.params.id)
+        };
+
+        updatedProduct = {
+            ...updatedProduct,
+            ...req.body
+        };
+
+        /* 
+            const updatedProduct = req.body;
+            updatedProduct.id = Number(req.params.id); 
+        */
+
+        productModel.updateProduct(updatedProduct);
+
+        res.redirect('/products/' + updatedProduct.id + '/detail');
     }
+
+
 }
 
 module.exports = controller;

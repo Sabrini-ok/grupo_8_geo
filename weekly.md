@@ -28,3 +28,5 @@ Nos juntamos dos de cuatro integrantes y revisamos las correcciones del sprint a
 --------------------------------------
 
 >>> Reunión 22/08<<<
+
+El equipo se juntó completo y pudimos ver las últimas cosas del sprint 4 que nos faltaban, aunque aún nos quedan algunas cosas cosas por resolver. Pudimos adelantar y agregar cosas al proyecto, ahora estamos todos más al día con todo.
