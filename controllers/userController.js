@@ -27,7 +27,7 @@ const controller = {
         const userInJson = userModel.findByEmail(req.body.email);
 
         if (!userInJson) {
-            return res.redirect('/user/login?error=El email o la contraseña son incorrectos');
+            return res.redirect('login');
         }
             
         const validPw = bcrypt.compareSync(req.body.password, userInJson.password);

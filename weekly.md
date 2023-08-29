@@ -30,3 +30,9 @@ Nos juntamos dos de cuatro integrantes y revisamos las correcciones del sprint a
 >>> Reunión 22/08<<<
 
 El equipo se juntó completo y pudimos ver las últimas cosas del sprint 4 que nos faltaban, aunque aún nos quedan algunas cosas cosas por resolver. Pudimos adelantar y agregar cosas al proyecto, ahora estamos todos más al día con todo.
+
+--------------------------------------
+
+>>> Reunión 29/08<<<
+
+Nos pusimos al día con el tabler de Trello del Sprint 5 y revisamos las correcciones del Sprint 4. Tenemos varios pendientes para revisar, sobre todo en las rutas y validación de los formularios de registro y Login, intentaremos trabajar en ello para mejorarlo y entregar la semana próxima todo corregido.
