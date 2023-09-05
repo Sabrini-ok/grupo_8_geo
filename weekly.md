@@ -35,4 +35,10 @@ El equipo se juntó completo y pudimos ver las últimas cosas del sprint 4 que n
 
 >>> Reunión 29/08<<<
 
-Nos pusimos al día con el tabler de Trello del Sprint 5 y revisamos las correcciones del Sprint 4. Tenemos varios pendientes para revisar, sobre todo en las rutas y validación de los formularios de registro y Login, intentaremos trabajar en ello para mejorarlo y entregar la semana próxima todo corregido.
+Nos pusimos al día con el tablero de Trello del Sprint 5 y revisamos las correcciones del Sprint 4. Tenemos varios pendientes para revisar, sobre todo en las rutas y validación de los formularios de registro y Login, intentaremos trabajar en ello para mejorarlo y entregar la semana próxima todo corregido.
+
+--------------------------------------
+
+>>> Reunión 05/09<<<
+
+Revisamos pendientes del sprint anterior (edición y eliminación e productos). Nos dividimos las tareas que nos faltan para llegar a la entrega del sprint 5 el próximo martes, actualizamos trello y el repositorio.
