@@ -26,7 +26,7 @@ const validations = [
     body('userPassword').notEmpty().withMessage('Usá al menos 8 digitos e incluí al menos un caracter especial'),
     body('avatar').custom((value, { req }) =>{
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.gif', 'jpeg'];
+        let acceptedExtensions = ['.jpg', '.png', '.gif', '.jpeg'];
 
         if (!file){
             throw new Error ('Subí una imagen por favor')
