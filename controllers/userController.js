@@ -29,19 +29,28 @@ const controller = {
         const userInJson = userModel.findByEmail(req.body.email);
 
         if (!userInJson) {
-            return res.redirect('login');
+        return res.redirect('login'); 
         }
-            
+         
         const validPw = bcrypt.compareSync(req.body.password, userInJson.userPassword);
 
         if (validPw) {
-            res.send('La contraseña coincide');
+            // Redirige al usuario a la página de perfil o al área protegida
+            return res.redirect(`/profile/${userInJson.id}`);
         } else {
-            res.redirect('/user/login?error=El email o la contraseña son incorrectos');
+            // Redirige al usuario de vuelta al inicio de sesión en caso de error
+            return res.redirect('login?error=El email o la contraseña son incorrectos');
         }
 
         
     },
+
+/*     login: (req, res) => {
+        return res.render('login'); // Renderiza la vista 'login.ejs'
+    }, */
+    
+
+    
 
     profile: (req, res) => {
         return res.render ('profile');

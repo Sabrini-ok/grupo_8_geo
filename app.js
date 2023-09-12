@@ -7,9 +7,7 @@ const dotenv = require('dotenv').config();
 const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productsRouter');
-// const productRouter = require('./routes/productsRouter');
-//Para requerir librerias
-
+const session = require('express-session');
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));   //Para hacer publicos los archivos estaticos
@@ -28,8 +26,12 @@ app.set('views', [
     path.join(__dirname, './views/products')
 ]);
 
-app.use(methodOverride('_method')); //Se necesita ara poder eliminar o editar
 
+app.use(session({
+    secret: 'secret0_secret1',
+    resave: false,
+    saveUninitialized: true,
+}));
 
 app.use('/', mainRouter);
 app.use('/user', userRouter);
