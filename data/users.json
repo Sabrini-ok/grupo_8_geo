@@ -145,5 +145,12 @@
         "email": "cisalem2@gmail.com",
         "userPassword": "$2b$10$Q5ujS9DJwue.mUTz0MBE4ulDMIsHwmLHXBR2lHZWbY1ImGUhnTd3u",
         "gender": "Masculino"
+    },
+    {
+        "id": "52b8b1f1-9775-47bf-958e-afb1753fbfd5",
+        "userName": "fds",
+        "email": "fdsiuf@gmail.com",
+        "userPassword": "$2b$10$hfRgzFoSEKP35dL8eK2XiuNiwo43op0BJ8tXAqu8uuMRhZWcRNhZG",
+        "gender": "Masculino"
     }
 ]
