@@ -11,13 +11,15 @@ const controller = {
 
     processRegister: (req, res) => {
         const resultValidation = validationResult(req);
-
+        console.log(resultValidation.errors)
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
         }
+
+        userModel.create(req.body)
 
         return res.send ('No hay errores en el formulario, gracias por registrarte')
 
@@ -30,7 +32,7 @@ const controller = {
             return res.redirect('login');
         }
             
-        const validPw = bcrypt.compareSync(req.body.password, userInJson.password);
+        const validPw = bcrypt.compareSync(req.body.password, userInJson.userPassword);
 
         if (validPw) {
             res.send('La contraseña coincide');

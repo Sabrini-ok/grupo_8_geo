@@ -7,7 +7,7 @@ const modelo = {
 
     fileRoute: path.join(__dirname, '../data/users.json'),
 
-    create: (userData) => {
+    create: async(userData) => {
         const emailInUse = modelo.findByEmail(userData.email);
 
         if (emailInUse) {
@@ -21,14 +21,14 @@ const modelo = {
             id: uuid.v4(),
             ...userData
         };
-
-        newUser.password = bcrypt.hashSync(newUser.password, 12);
+        const randomSalt = await bcrypt.genSalt(10)
+        newUser.userPassword = await bcrypt.hash(newUser.userPassword, randomSalt);
 
         users.push(newUser);
 
         const usersJson = JSON.stringify(users);
 
-        fs.writeFileSync(model.fileRoute, usersJson, 'utf-8');
+        fs.writeFileSync(modelo.fileRoute, usersJson, 'utf-8');
 
         return newUser;
 

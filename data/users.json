@@ -138,5 +138,12 @@
         "email": "wmcswanj@alibaba.com",
         "gender": "Agender",
         "category": "Supervisor"
+    },
+    {
+        "id": "8f0062fc-94a9-4405-b238-246a1eb04758",
+        "userName": "fsafs",
+        "email": "cisalem2@gmail.com",
+        "userPassword": "$2b$10$Q5ujS9DJwue.mUTz0MBE4ulDMIsHwmLHXBR2lHZWbY1ImGUhnTd3u",
+        "gender": "Masculino"
     }
 ]
