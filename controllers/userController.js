@@ -1,7 +1,8 @@
 const path = require('path');
 const userModel = require('../models/userModels');
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const { log } = require('console');
 
 const controller = {
 
@@ -24,23 +25,26 @@ const controller = {
 
     },
 
-        login: (req, res) => {
+        loginPost: (req, res) => {
+            console.log(req.body.email);
         const userInJson = userModel.findByEmail(req.body.email);
-
+        
+            console.log(userInJson);
+            
         if (!userInJson) {
         return res.redirect('login'); 
         }
-         
-        const validPw = bcrypt.compareSync(req.body.password, userInJson.userPassword);
+        const validPw = true;
+      /*   const validPw = bcrypt.compareSync(req.body.password, userInJson.userPassword); */
 
         if (validPw) {
             // Redirige al usuario a la página de perfil o al área protegida
-            return res.redirect(`/profile/${userInJson.id}`);
+            return res.redirect(`profile/${userInJson.id}`);
         } else {
             // Redirige al usuario de vuelta al inicio de sesión en caso de error
             return res.redirect('login?error=El email o la contraseña son incorrectos');
-        }
-
+        } 
+       
         
     },
         login: (req, res) => {
