@@ -11,7 +11,6 @@ const controller = {
 
     processRegister: (req, res) => {
         const resultValidation = validationResult(req);
-        console.log(resultValidation.errors)
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
                 errors: resultValidation.mapped(),
@@ -25,7 +24,7 @@ const controller = {
 
     },
 
-    login: (req, res) => {
+        login: (req, res) => {
         const userInJson = userModel.findByEmail(req.body.email);
 
         if (!userInJson) {
@@ -44,10 +43,9 @@ const controller = {
 
         
     },
-
-/*     login: (req, res) => {
+        login: (req, res) => {
         return res.render('login'); // Renderiza la vista 'login.ejs'
-    }, */
+    },
     
 
     
