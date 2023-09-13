@@ -93,6 +93,15 @@ header{
     display: none;
 }
 
+.cart-product{
+    justify-content: center;
+}
+
+.cart-product img{
+    justify-content: center;
+}
+
+
 .enter-button{
     display: none;
 }
@@ -109,6 +118,7 @@ main{
     display: flex;
     flex-direction: column;
     padding: 24px;
+    justify-content: center;
 }
 
 h1 {
