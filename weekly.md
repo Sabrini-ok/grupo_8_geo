@@ -42,3 +42,9 @@ Nos pusimos al día con el tablero de Trello del Sprint 5 y revisamos las correc
 >>> Reunión 05/09<<<
 
 Revisamos pendientes del sprint anterior (edición y eliminación e productos). Nos dividimos las tareas que nos faltan para llegar a la entrega del sprint 5 el próximo martes, actualizamos trello y el repositorio.
+
+--------------------------------------
+
+>>> Reunión 03/10<<<
+
+Con las correcciones del sprint 5 comenzamos y corregimos lo solicitado. Lamentablemente otro compañero dejó el curso y ahora somos 3. Pero nos por eso nos desmoronamos si no que al contrario, tenemos más fuerza como equipo y nos propusimos cumplir con los objetivos a pesar de las dificultades que eso conlleva.
