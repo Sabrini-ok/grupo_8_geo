@@ -1,31 +1,25 @@
 >>> Sprint 6 <<<
 
 **Lo mejor**
--Buscamos cada oportunidad para reunirnos.
--Cada dí­a que pasa, nuestra relación se vuelve más sólida.
--Nos esforzamos por no desactualizarnos, aunque no siempre es fácil,
--Nunca dejamos de esforzarnos por ser mejores, sin importar lo que venga.
--Siempre fuimos proactivos comunicando posibles problemas.
--Nuestro equipo siempre se involucra a fondo en el trabajo.
+-Siempre nos empeñamos en superarnos, pase lo que pase.
+-Nuestra relación se consolida con cada jornada que transcurre.
+-Siempre estamos al acecho de oportunidades para juntarnos.
+-Intentamos no quedarnos atrás, pero no siempre es sencillo.
+-Siempre nos comprometemos de manera intensa en la labor.
+-Nunca nos quedamos atrás al advertir sobre posibles inconvenientes.
  
 **Lo peor**
--Las computadoras dañadas limitaron significativamente nuestra capacidad de trabajo.
--El material se torna complicado en un corto periodo de tiempo.
--Justo cuando pensamos que todo está resuelto, surgen inconvenientes inesperados.
--En ocasiones, encontrarnos entre semana se convierte en un desafío.
--A pesar de que nuestras reuniones son más frecuentes, no siempre logramos que los cuatro asistamos a cada encuentro.
--La falta de descanso en el curso sumado a nuestros compromisos adicionales hace que seguir el paso sea realmente complicado.
+-Cada uno está en su mundo.
+-Cada vez somos menos personas en los encuentros.
+-Cuando pensamos que estamos en la cresta de la ola, siempre aparece algo que nos tira para atras....
+-Se complica seguir el paso, por más que ya estamos terminando, cuesta cada vez más.
+-Se fue otro integrante más del equipo, lo que dificulta poder seguir adelante con las entregas en tiempo y forma.
 
-- 
 
 **Acciones**
-Creo firmemente que debemos identificarnos más con el equipo 8, y más todaví­a en esta etapa!!!
-Trello fue actualizado así que lo ideal es mantenerlo­.
-Enfocarnos en el bienestar colectivo antes que en el propio.
-Dominar los conceptos de CRUD y middlewares como así también todo lo que se va aprendiendo.
-Convenir encuentros más frecuentes, considerando que no siempre coincidimos todos.
-Conocer a Facu(?.
-
-- 
-
---------------------------------------
+-Darnos prioridad al beneficio comunitario antes que al personal.
+-Establecer citas más habituales, dado que no todos coincidimos siempre­.
+-Ahora que Trello está al día, lo óptimo sería preservarlo así.
+-Estoy convencido de que deberíamos conectar más con el equipo 8, especialmente ahora.
+-Más reuniones semanales.
+-Encontrar una alternativa para llegar bien con las entregas .
