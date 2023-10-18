@@ -26,7 +26,7 @@ const controller = {
     },
 
         loginPost: (req, res) => {
-            console.log(req.body.email);
+            console.log(req.body);
         const userInJson = userModel.findByEmail(req.body.email);
         
             console.log(userInJson);
@@ -39,6 +39,9 @@ const controller = {
 
         if (validPw) {
             // Redirige al usuario a la página de perfil o al área protegida
+            res.cookie("session", "prueba", {
+                maxAge: 99999999,
+            })
             return res.redirect(`profile/${userInJson.id}`);
         } else {
             // Redirige al usuario de vuelta al inicio de sesión en caso de error

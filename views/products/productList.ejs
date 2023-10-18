@@ -31,10 +31,10 @@
                         <h4><%= producto.productName %></h4>
                         <p><%= producto.productDescription %></p>  
                         <a href=""><button class="secondary" type="button"> Ver Detalle </button> </a>
-                        <form action="/product/<%= products.id %>/delete?_method=DELETE" method="post">
-                            <a href=""><button class="primary"><i class="fa-solid fa-trash"></i></button></a>
+                        <form action="/product/<%= producto.id %>/delete" method="post">
+                            <button class="primary" type="submit"><i class="fa-solid fa-trash"></i></button>
                         </form>
-                        <a href=""><button class="primary"><i class="fa-solid fa-pen-to-square"></i></i></button></a>
+                        <a href="/product/<%= producto.id %>/edit"><button class="primary"><i class="fa-solid fa-pen-to-square"></i></i></button></a>
                     </div>
                 </section>
             <% }) %>

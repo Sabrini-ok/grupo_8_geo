@@ -1,6 +1,7 @@
 const path = require('path');
 const productModel = require('../models/productModels');
 const { validationResult } = require('express-validator');
+const { log } = require('console');
 
 const controller = {
   
@@ -48,8 +49,7 @@ const controller = {
 
     deleteProduct: (req, res) => {
         productModel.destroy(Number(req.params.id));
-
-        res.redirect('/product/');
+        res.redirect('/product/list');
     },
 
     updateProduct: (req, res) => {

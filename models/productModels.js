@@ -50,7 +50,7 @@ const modelo = {
 
         const jsonProducts = JSON.stringify(products);
 
-        fs.writeFileSync(modelo.fileRoute, jsonData, 'utf-8');
+        fs.writeFileSync(modelo.fileRoute, jsonProducts, 'utf-8');
     },
 
     // Edit

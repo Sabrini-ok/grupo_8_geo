@@ -48,7 +48,7 @@ router.get('/create', productController.getCreate); //Ruta para crear un product
 router.post('/', uploadFile.single('imageUpload'), productController.postProduct);
 
 // @DELETE - /products/:id/delete
-router.delete('/:id/delete', productController.deleteProduct);
+router.post('/:id/delete', productController.deleteProduct);
 
 router.put('/:id/edit', productController.updateProduct);
 
