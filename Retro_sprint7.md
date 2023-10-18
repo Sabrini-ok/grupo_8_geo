@@ -8,7 +8,7 @@
 -No nos desmoronamos a pesar de tener 3 compañeros menos.
  
 **Lo peor**
--Nos resulta más dificil cada vez.
+-Nos resulta más dificil cada vez que hay temas nuevos.
 -A veces es complicado la buena comunicación.
 -Sentimos que los sprints anteriores no los cerramos más
 -Encontramos muchos errores que son dificiles de corregir porque ya son irrastreables.
