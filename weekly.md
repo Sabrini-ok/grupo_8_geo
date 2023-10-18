@@ -48,3 +48,13 @@ Revisamos pendientes del sprint anterior (edición y eliminación e productos). 
 >>> Reunión 03/10<<<
 
 Con las correcciones del sprint 5 comenzamos y corregimos lo solicitado. Lamentablemente otro compañero dejó el curso y ahora somos 3. Pero nos por eso nos desmoronamos si no que al contrario, tenemos más fuerza como equipo y nos propusimos cumplir con los objetivos a pesar de las dificultades que eso conlleva.
+
+--------------------------------------
+
+>>> Reunión 10/10<<<
+Dijimos de poner al día todas las cosas anteriores así ya nos enfocamos en todo lo que queda para adelante. Todas las cosas de sprints viejos tratar de cerrarlas y enfocarnos de lleno en 6 7 8.
+
+--------------------------------------
+
+>>> Reunión 17/10<<<
+Definitivamente somos 3 los que llegaremos al final. Avanzamos con carritos de compras, eliminacion de productos, linkeamos rutas que estaban mal o tiraban error y corregimos como habiamos dicho la semana pasada cosas anteriores.
