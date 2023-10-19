@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "admin",
     "database": "Grupo8_Geo",
     "host": "localhost",
     "dialect": "mysql"
