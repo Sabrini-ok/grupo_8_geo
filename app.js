@@ -8,6 +8,17 @@ const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productsRouter');
 const session = require('express-session');
+const connection = require('./database/connection')
+
+async function testConnection (){
+    try {
+        await connection.authenticate()
+    } catch (error) {
+        console.log ("Error: ", error)
+    }
+}
+
+testConnection ()
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));   //Para hacer publicos los archivos estaticos
