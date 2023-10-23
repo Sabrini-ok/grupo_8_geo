@@ -68,7 +68,7 @@ CREATE TABLE `productos` (
 --
 
 CREATE TABLE `usuarios` (
-  `user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(200) DEFAULT NULL,
   `email` varchar(200) DEFAULT NULL,
   `gender` varchar(200) DEFAULT NULL,
@@ -104,7 +104,7 @@ ALTER TABLE `productos`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Restricciones para tablas volcadas
@@ -114,7 +114,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`user_id`);
+  ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`);
 
 --
 -- Filtros para la tabla `pedidos_producto`
@@ -129,7 +129,7 @@ ALTER TABLE `pedidos_producto`
 -- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `pedidos` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id`) REFERENCES `pedidos` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

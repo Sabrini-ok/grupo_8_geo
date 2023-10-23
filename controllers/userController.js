@@ -3,6 +3,7 @@ const userModel = require('../models/userModels');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const { log } = require('console');
+const User = require('../models/userModelSequelize')
 
 const controller = {
 
@@ -10,7 +11,7 @@ const controller = {
         return res.render('register');
     },
 
-    processRegister: (req, res) => {
+    processRegister: async(req, res) => {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
@@ -18,8 +19,25 @@ const controller = {
                 oldData: req.body
             });
         }
+        console.log('req.body', req.body)
+        
+        try {
+            const user = await User.create({
+                fullName: req.body.userName,
+                email: req.body.email, 
+                gender: req.body.gender,
+                password: req.body.userPassword,
+                avatar: ''
 
-        userModel.create(req.body)
+            })  
+              } catch (error) {
+         return res.status(500).json({
+            message: error.message
+         })   
+        }
+
+
+        //userModel.create(req.body)
 
         return res.send ('No hay errores en el formulario, gracias por registrarte')
 

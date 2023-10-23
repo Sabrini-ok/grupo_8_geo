@@ -13,6 +13,7 @@ const connection = require('./database/connection')
 async function testConnection (){
     try {
         await connection.authenticate()
+        connection.sync();
     } catch (error) {
         console.log ("Error: ", error)
     }
