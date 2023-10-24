@@ -18,4 +18,4 @@
 -Establecer horarios de entregas si dividimos tareas­.
 -Seguir con el trello actualizado que venimos bien.
 -Lo que no hicimos hasta acá no creo que lo cambiemos. Sí, podemos mejorar
--Encontrar una alternativa para llegar bien con las entregas .
+-Encontrar una alternativa para llegar bien con las entregas.
