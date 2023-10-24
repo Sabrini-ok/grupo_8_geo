@@ -2,6 +2,7 @@ const path = require('path');
 const productModel = require('../models/productModels');
 const { validationResult } = require('express-validator');
 const { log } = require('console');
+const Product = require('../models/productModelSequelize')
 
 const controller = {
   
@@ -14,29 +15,39 @@ const controller = {
         res.render('productList', {products}); //Hacerlo asi es lo mismo que poner {products: products}
     },
 
-    getDetail: (req, res) => {
+    getDetail: async(req, res) => {
         const productId = req.params.id;
-        const selectedProduct = productModel.findById(productId);
-        res.render('productDetail', {products: selectedProduct});
+        const result = await Product.findByPk(productId)
+        res.render('productDetail', {products: result.dataValues});
     },
 
     getCreate: (req, res) => {
         res.render('createProduct');
     },
 
-    postProduct: (req, res) => {
-        const newProduct = { //Guardamos en una variable lo que ingresa el cliente en el formulario
-            productName: req.body.productName, //De esta forma se le puede agregar un poco de seguridad al formulario
-            productDescription: req.body.productDescription,
-            productCategory: req.body.productCategory,
-            productPrice: req.body.productPrice,
-            imageUpload: req.file.filename,
-            masBuscado: req.body.masBuscado
-        }
-
-        const createdProduct = productModel.createProduct(newProduct); //Le pasamos la variable donde almacenamos lo que ingreso el cliente a la funcion del modelo de createProduct. Mediante esta linea de codigo ahora el controller si puede acceder al id del producto
+    postProduct: async(req, res) => {
         
-        res.redirect('/product/' + createdProduct.id + '/detail');
+
+            try {
+                const product = await Product.create({
+                    productName: req.body.productName,
+                    price: req.body.productPrice,
+                    description: req.body.productDescription,
+                    category: req.body.productCategory,
+                    image: req.file.filename,    
+                })  
+                res.redirect('/product/' + product.id + '/detail');
+
+                  } catch (error) {
+             return res.status(500).json({
+                message: error.message
+             })   
+            }
+
+
+
+        
+        
         //Desde los POST no renderizamos vistas, solo redireccionamos
         // res.redirect('/products');
     },

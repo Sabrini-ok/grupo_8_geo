@@ -11,24 +11,19 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
 -- Base de datos: `Grupo8_Geo`
---
 
 -- --------------------------------------------------------
 
---
 -- Estructura de tabla para la tabla `pedidos`
---
 
 CREATE TABLE `pedidos` (
-  `order_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL PRIMARY KEY,
   `user_id` int(11) DEFAULT NULL,
   `total_price` decimal(10,2) DEFAULT NULL,
   `order_date` date DEFAULT NULL
@@ -36,9 +31,7 @@ CREATE TABLE `pedidos` (
 
 -- --------------------------------------------------------
 
---
 -- Estructura de tabla para la tabla `pedidos_producto`
---
 
 CREATE TABLE `pedidos_producto` (
   `order_id` int(11) NOT NULL,
@@ -48,12 +41,10 @@ CREATE TABLE `pedidos_producto` (
 
 -- --------------------------------------------------------
 
---
 -- Estructura de tabla para la tabla `productos`
---
 
 CREATE TABLE `productos` (
-  `product_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `product_name` varchar(200) DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
   `description` text,
@@ -63,12 +54,10 @@ CREATE TABLE `productos` (
 
 -- --------------------------------------------------------
 
---
 -- Estructura de tabla para la tabla `usuarios`
---
 
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `full_name` varchar(200) DEFAULT NULL,
   `email` varchar(200) DEFAULT NULL,
   `gender` varchar(200) DEFAULT NULL,
@@ -76,60 +65,31 @@ CREATE TABLE `usuarios` (
   `avatar` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
 -- Índices para tablas volcadas
---
 
---
 -- Indices de la tabla `pedidos`
---
 ALTER TABLE `pedidos`
-  ADD PRIMARY KEY (`order_id`),
   ADD UNIQUE KEY `user_id` (`user_id`);
 
---
 -- Indices de la tabla `pedidos_producto`
---
 ALTER TABLE `pedidos_producto`
-  ADD PRIMARY KEY (`order_id`,`product_id`),
   ADD KEY `FK2` (`product_id`);
 
---
--- Indices de la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD PRIMARY KEY (`product_id`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Restricciones para tablas volcadas
---
 
---
 -- Filtros para la tabla `pedidos`
---
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `usuarios` (`id`);
 
---
 -- Filtros para la tabla `pedidos_producto`
---
 ALTER TABLE `pedidos_producto`
-  ADD CONSTRAINT `FK1` FOREIGN KEY (`order_id`) REFERENCES `pedidos` (`order_id`),
-  ADD CONSTRAINT `FK2` FOREIGN KEY (`product_id`) REFERENCES `productos` (`product_id`),
   ADD CONSTRAINT `pedidos_producto_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `pedidos` (`order_id`),
-  ADD CONSTRAINT `pedidos_producto_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `productos` (`product_id`);
+  ADD CONSTRAINT `pedidos_producto_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `productos` (`id`);
 
---
 -- Filtros para la tabla `usuarios`
---
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id`) REFERENCES `pedidos` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
