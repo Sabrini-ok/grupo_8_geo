@@ -19,27 +19,27 @@ const controller = {
                 oldData: req.body
             });
         }
-        console.log('req.body', req.body)
+        const randomSalt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(req.body.userPassword, randomSalt);
         
+
         try {
             const user = await User.create({
                 fullName: req.body.userName,
                 email: req.body.email, 
                 gender: req.body.gender,
-                password: req.body.userPassword,
-                avatar: ''
+                password: hashedPassword,
+                avatar: req.file.filename
 
-            })  
+            })
+            
+            res.redirect('/user/profile/'+ user.dataValues.id)
+            
               } catch (error) {
          return res.status(500).json({
             message: error.message
          })   
         }
-
-
-        //userModel.create(req.body)
-
-        return res.send ('No hay errores en el formulario, gracias por registrarte')
 
     },
 
@@ -72,7 +72,22 @@ const controller = {
         return res.render('login'); // Renderiza la vista 'login.ejs'
     },
     
+    getUsers: async (req, res) => {
+    const users = await User.findAll()
+    
+    return res.json({
+        users
+    })
+    },
 
+    getUser: async (req, res) => {
+        const id = req.params.id
+        const user = await User.findByPk(id)
+        if(!user) return res.status(404).json({
+            message: 'user not found'
+        }) 
+        return res.json(user)
+        },
     
 
     profile: (req, res) => {

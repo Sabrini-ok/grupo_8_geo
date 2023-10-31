@@ -49,6 +49,8 @@ router.get('/login', userController.login);
 router.post('/login', userController.loginPost)
 
 router.get('/register', userController.register);
+router.get('/', userController.getUsers)
+
 
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
 
