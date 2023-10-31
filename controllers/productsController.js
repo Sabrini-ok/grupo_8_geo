@@ -1,8 +1,8 @@
 const path = require('path');
-const productModel = require('../models/productModels');
+const productModel = require('../database/models/productModels');
 const { validationResult } = require('express-validator');
 const { log } = require('console');
-const Product = require('../models/productModelSequelize')
+const Product = require('../database/models/productModelSequelize')
 
 const controller = {
   

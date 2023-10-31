@@ -1,9 +1,9 @@
 const path = require('path');
-const userModel = require('../models/userModels');
+const userModel = require('../database/models/userModels');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const { log } = require('console');
-const User = require('../models/userModelSequelize')
+const User = require('../database/models/userModelSequelize')
 
 const controller = {
 

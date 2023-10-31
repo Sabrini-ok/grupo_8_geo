@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "admin",
-    "database": "grupo8_geo",
+    "password": "root",
+    "database": "Grupo8_Geo",
     "host": "localhost",
     "dialect": "mysql"
   },
