@@ -2,7 +2,8 @@ const path = require('path');
 const productModel = require('../database/models/productModels');
 const { validationResult } = require('express-validator');
 const { log } = require('console');
-const Product = require('../database/models/productModelSequelize')
+const Product = require('../database/models/productModelSequelize');
+const sequelize = require('../database/connection');
 
 const controller = {
   
@@ -24,10 +25,25 @@ const controller = {
 
 
     getProducts: async (req, res) => {
-        const products = await Product.findAll()
-        
+        const {count, rows: products} = await Product.findAndCountAll()
+        const countsByCategory = await Product.findAll({
+            group: ['category'], 
+            attributes: [
+                [sequelize.fn('COUNT', sequelize.col('category')), 'count'], 
+                'category'
+            ]
+        })
+
+
+        const countByCategory = countsByCategory.reduce((prev, curr, index)=> {
+        prev[curr.dataValues.category] = curr.dataValues.count
+        return prev;
+    }, {})  
+
+
+
         return res.json({
-            products
+            products, count, countByCategory 
         })
         },
     
