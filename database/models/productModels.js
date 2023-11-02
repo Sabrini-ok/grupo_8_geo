@@ -3,7 +3,7 @@ const path = require('path');
 
 const modelo = {
 
-    fileRoute: path.join(__dirname, '../data/products.json'), //Guardo ruta que se repite en una variable
+    fileRoute: path.join(__dirname, '../../data/products.json'), //Guardo ruta que se repite en una variable
 
     findAll: () => {
         //Buscamos el contenido del archivo JSON

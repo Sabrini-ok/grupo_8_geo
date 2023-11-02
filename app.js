@@ -10,6 +10,7 @@ const productRouter = require('./routes/productsRouter');
 const session = require('express-session');
 const connection = require('./database/connection')
 const userApiRouter = require('./routes/userApiRouter');
+const productApiRouter = require('./routes/productApiRouter');
 
 async function testConnection (){
     try {
@@ -50,5 +51,6 @@ app.use('/', mainRouter);
 app.use('/user', userRouter);
 app.use('/product', productRouter);
 app.use('/api/users', userApiRouter);
+app.use('/api/products', productApiRouter);
 
 app.listen(process.env.PORT || 3000, () => console.log('Servidor corriendo en puerto ' + process.env.PORT)); // Run the server

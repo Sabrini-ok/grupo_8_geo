@@ -21,6 +21,25 @@ const controller = {
         res.render('productDetail', {products: result.dataValues});
     },
 
+
+
+    getProducts: async (req, res) => {
+        const products = await Product.findAll()
+        
+        return res.json({
+            products
+        })
+        },
+    
+    getProductDetail: async (req, res) => {
+            const id = req.params.id
+            const product = await Product.findByPk(id)
+            if(!product) return res.status(404).json({
+                message: 'Product not found'
+            }) 
+            return res.json(product)
+            },
+
     getCreate: (req, res) => {
         res.render('createProduct');
     },
