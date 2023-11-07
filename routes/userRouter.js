@@ -42,9 +42,10 @@ const validations = [
 ]
 
 const userController = require('../controllers/userController');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 
-router.get('/login', userController.login);
+router.get('/login', authMiddleware, userController.login);
 
 router.post('/login', userController.loginPost)
 
