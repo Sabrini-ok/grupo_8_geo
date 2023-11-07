@@ -14,7 +14,6 @@ module.exports = (req, res, next) =>{
             res.clearCookie('session');
             return res.redirect('/user/login');
         }
-        
     }
 
     if(!token){
