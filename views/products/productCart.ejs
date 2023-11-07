@@ -11,28 +11,52 @@
     <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <%- include('./partials/header') %>
-    </header>
+    <%- include('../partials/header') %>
 
-    <main>
-        <h1>Carro de compras</h1>
-        <section class="cart-product">
-            <img src="/img/prodImages/aguaderosas.jpg" width="3%">
-            <div class="cart-product-reset">
-                <input type="reset"></input>
+    <h1>Carrito de Compras</h1>
+<main class="mainCarrito">
+
+
+<section class="productosCarrito">
+    <% let total = 0; %>
+    <% for (let i = 1; i <= 4; i++) { %>
+        <section class="productoSelect">
+            <div class="img-container">
+                <img src="/img/prodImages/dientes.jpg">
+            </div>
+            <div class="precioCart">
+                <h1>Producto <%= i %></h1>
+                <h2>Precio: $<%= i * 25.99 %></h2>
+                <% total += i * 25.99; %>
+                <p>Cantidad: <% i %></p>
+            </div>
+            <div class="product-buttons">
+                <div class="primary">
+                    <button>Comprar</button>
+                </div>
+                <div class="secondary">
+                    <button>Eliminar</button>
+                </div>
             </div>
         </section>
-        <section class="cart-button-comprar">
-            <input type="text" placeholder="Comprar Ahora" required>
-        </section>
-        <section class="cart-button-agregar">
-            <input type="text" placeholder="Agregar al carrito" required>
-        </section>
-    </main>
+    <% } %>
+</section>
 
-    <footer>
-        <%- include('./partials/footer') %>
-    </footer>
+<section class="carritoSummary">
+    <h2>Resumen de tu compra</h2>
+    <div class="subtotal">
+        <p>Subtotal:</p>
+        <p>$<%= total.toFixed(2) %></p>
+    </div>
+    <div class="total">
+        <p>Total:</p>
+        <p>$<%= total.toFixed(2) %></p>
+    </div>
+    <div class="checkout-button">
+        <button>Ir al Pago</button>
+    </div>
+</section>
+</main>
+<%- include('../partials/footer') %>
 </body>
 </html>
