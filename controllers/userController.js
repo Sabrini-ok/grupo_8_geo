@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator');
 const bcrypt = require('bcrypt');
 const { log } = require('console');
 const User = require('../database/models/userModelSequelize')
+const jwt = require('jsonwebtoken')
 
 const controller = {
 
@@ -43,24 +44,27 @@ const controller = {
 
     },
 
-        loginPost: (req, res) => {
-            console.log(req.body);
-        const userInJson = userModel.findByEmail(req.body.email);
-        
-            console.log(userInJson);
-            
-        if (!userInJson) {
-        return res.redirect('login'); 
+        loginPost: async (req, res) => {
+        const user = await User.findOne({
+          where: {
+            email: req.body.email
+          }
+        });
+        console.log(user,req.body)
+
+        if (!user) {
+        return res.redirect('login?error=El email o la contraseña son incorrectos');
         }
-        const validPw = true;
-      /*   const validPw = bcrypt.compareSync(req.body.password, userInJson.userPassword); */
+        
+        const validPw = await bcrypt.compareSync(req.body.userPassword, user.dataValues.password);
 
         if (validPw) {
-            // Redirige al usuario a la página de perfil o al área protegida
-            res.cookie("session", "prueba", {
+            const token = jwt.sign({id: user.dataValues.id}, 'secret');
+            
+            res.cookie("session", token, {
                 maxAge: 99999999,
             })
-            return res.redirect(`profile/${userInJson.id}`);
+            return res.redirect(`profile/${user.id}`);
         } else {
             // Redirige al usuario de vuelta al inicio de sesión en caso de error
             return res.redirect('login?error=El email o la contraseña son incorrectos');
@@ -68,7 +72,15 @@ const controller = {
        
         
     },
-        login: (req, res) => {
+        login: async (req, res) => {
+        const user = await User.findByPk(req.user)
+
+        if (user) {
+            return res.redirect(`profile/${user.id}`);
+        }
+
+        res.clearCookie('session');
+
         return res.render('login'); // Renderiza la vista 'login.ejs'
     },
     

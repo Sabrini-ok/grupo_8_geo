@@ -11,6 +11,7 @@ const session = require('express-session');
 const connection = require('./database/connection')
 const userApiRouter = require('./routes/userApiRouter');
 const productApiRouter = require('./routes/productApiRouter');
+const cookieParser = require('cookie-parser');
 
 async function testConnection (){
     try {
@@ -22,6 +23,8 @@ async function testConnection (){
 }
 
 testConnection ()
+
+app.use(cookieParser())
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));   //Para hacer publicos los archivos estaticos
