@@ -1,7 +1,8 @@
 const {DataTypes } = require("sequelize");
 const sequelize = require ('../connection')
+const Category = require ('./categoryModelSequelize')
 
-const Product = sequelize.define ('productos', {
+const Product = sequelize.define ('product', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -22,17 +23,17 @@ const Product = sequelize.define ('productos', {
         type: DataTypes.STRING  
     },
 
-    category: {
-        type: DataTypes.STRING  
-    },
 
     image: {
         type: DataTypes.STRING  
     }
 }
 , {
-    timestamps: false
+    timestamps: false,
+    freezeTableName: true
 }
 )
+
+Product.belongsTo(Category, { foreignKey: 'categoryId' });
 
 module.exports = Product

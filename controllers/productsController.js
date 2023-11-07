@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator');
 const { log } = require('console');
 const Product = require('../database/models/productModelSequelize');
 const sequelize = require('../database/connection');
+const Category = require('../database/models/categoryModelSequelize');
 
 const controller = {
   
@@ -18,7 +19,14 @@ const controller = {
 
     getDetail: async(req, res) => {
         const productId = req.params.id;
-        const result = await Product.findByPk(productId)
+        const result = await Product.findByPk(productId, {
+            attributes: ['id', 'productName', 'price', 'description', 'image', 'categoryId'],
+            include: {
+                model: Category,
+                attributes: ['name'],
+                as: 'category'
+            }
+        })
         res.render('productDetail', {products: result.dataValues});
     },
 
@@ -56,19 +64,18 @@ const controller = {
             return res.json(product)
             },
 
-    getCreate: (req, res) => {
-        res.render('createProduct');
+    getCreate: async (req, res) => {
+        const categories = await Category.findAll();
+        res.render('createProduct', {categories});
     },
 
     postProduct: async(req, res) => {
-        
-
             try {
                 const product = await Product.create({
                     productName: req.body.productName,
                     price: req.body.productPrice,
                     description: req.body.productDescription,
-                    category: req.body.productCategory,
+                    categoryId: req.body.productCategory,
                     image: req.file.filename,    
                 })  
                 res.redirect('/product/' + product.id + '/detail');
