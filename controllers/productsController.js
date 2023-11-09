@@ -14,7 +14,7 @@ const controller = {
 
     getList: (req, res) => {
         const products = productModel.findAll(); //Accedo a un metodo de productModel
-        res.render('productList', {products}); //Hacerlo asi es lo mismo que poner {products: products}
+        res.render('productList', {products, user: req.user}); //Hacerlo asi es lo mismo que poner {products: products}
     },
 
     getDetail: async(req, res) => {
@@ -66,7 +66,7 @@ const controller = {
 
     getCreate: async (req, res) => {
         const categories = await Category.findAll();
-        res.render('createProduct', {categories});
+        res.render('createProduct', {categories, user: req.user});
     },
 
     postProduct: async(req, res) => {

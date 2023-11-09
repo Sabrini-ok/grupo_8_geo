@@ -1,22 +1,26 @@
 
 const jwt = require('jsonwebtoken');
 
-module.exports = (req, res, next) =>{
+    module.exports = (neededRoleAdmin) => (req, res, next) => {
     const token = req.cookies.session;
-    const path = req.path;
+    
+   
 
-    if(path == '/login' && token){
-        try {
-            const decoded = jwt.verify(token, 'secret');
-            req.user = decoded.id;
-            next();
-        } catch (error) {
-            res.clearCookie('session');
-            return res.redirect('/user/login');
-        }
-    }
-
-    if(!token){
+    if (!token) {
         return res.redirect('/user/login');
     }
+
+    try {
+        const user = jwt.verify(token, 'secret');
+        if (neededRoleAdmin && !user.admin) {
+            return res.redirect('/');
+        }
+
+        req.user = user;
+        next();
+    } catch (error) {
+        res.clearCookie('session');
+        return res.redirect('/user/login');
+    }
+
 }

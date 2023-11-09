@@ -43,19 +43,21 @@ const validations = [
 
 const userController = require('../controllers/userController');
 const authMiddleware = require('../middlewares/authMiddleware');
+const unauthMiddleware = require('../middlewares/unauthMiddleware');
 
 
-router.get('/login', authMiddleware, userController.login);
+router.get('/login', unauthMiddleware, userController.login);
 
 router.post('/login', userController.loginPost)
+router.get('/logout', authMiddleware(false), userController.logout)
 
-router.get('/register', userController.register);
-router.get('/', userController.getUsers)
+router.get('/register', unauthMiddleware, userController.register);
+router.get('/', authMiddleware(true), userController.getUsers)
 
 
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
 
-router.get('/profile/:id', userController.profile);
+router.get('/profile/', authMiddleware(false), userController.profile);
 
 
 module.exports = router;

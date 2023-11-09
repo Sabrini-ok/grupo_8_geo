@@ -9,6 +9,10 @@ const User = sequelize.define ('user', {
         allowNull: false, // Asegúrate de que no sea nula
     },
 
+    admin: {
+      type: DataTypes.BOOLEAN  
+    },
+
     fullName: {
         field: 'full_name',
         type: DataTypes.STRING  

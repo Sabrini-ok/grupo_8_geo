@@ -2,8 +2,10 @@ const path = require('path');
 
 const controller = {
     index: (req, res) => {
-        //const products =
-        res.render('index');
+        
+        res.render('index', {
+            user: req.user
+        });
     }
 }
 

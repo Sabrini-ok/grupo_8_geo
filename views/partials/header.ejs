@@ -13,11 +13,20 @@
                     <button class="menu-icon"><i class="fas fa-bars"></i></button>
                     <a href="/product/cart"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
                 </section>
+                <% if (locals.user) { %>
+                    <section>
+                        <a href = "/user/profile"> Hola, <%= user.fullName %> </a> 
+                    </section><section>
+                        <a href="/user/logout"><button class="enter-button" type="button"> Cerrá sesión </button> </a>
+                    </section>
+                    <% } else { %>  
                 <section>
                     <a href="/user/login"><button class="enter-button" type="button"> Ingresá </button> </a>
                 </section>
                 <section>
                     <a href="/user/register"><button class="create-button" type="button"> Creá tu cuenta </button></a>
                 </section>
+                <% } %>
+
             </div>
         </nav>
