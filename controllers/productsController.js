@@ -9,7 +9,7 @@ const Category = require('../database/models/categoryModelSequelize');
 const controller = {
   
     cart: (req, res) => {
-        res.render('productCart');
+        res.render('productCart', {user: req.user});
     },
 
     getList: (req, res) => {
@@ -27,7 +27,7 @@ const controller = {
                 as: 'category'
             }
         })
-        res.render('productDetail', {products: result.dataValues});
+        res.render('productDetail', {products: result.dataValues, user: req.user});
     },
 
 

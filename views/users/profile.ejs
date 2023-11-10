@@ -18,11 +18,12 @@
 
     <main class="mainLogin">
         <h3>Perfil de usuario</h3>
-        <p> ID <%= locals.user.id %> </p>
-        <p>Nombre</p>
-        <p>Email</p>
-        <p>Género</p>
-        <p>Categoría</p>
+        <p> ID: <%= locals.user.id %> </p>
+        <p>Nombre: <%= locals.user.fullName %> </p>
+        <p>Email: <%= locals.user.email %>  </p>
+        <p>Género: <%= locals.user.gender %></p>
+        
+        <button class="loginButton"><a href="/user/edit">Editar perfil</a></p>
     </main>
 
     <footer>
