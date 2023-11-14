@@ -12,9 +12,10 @@ const controller = {
         res.render('productCart', {user: req.user});
     },
 
-    getList: (req, res) => {
-        const products = productModel.findAll(); //Accedo a un metodo de productModel
-        res.render('productList', {products, user: req.user}); //Hacerlo asi es lo mismo que poner {products: products}
+    getList: async (req, res) => {
+        const products = await Product.findAll(); //Accedo a un metodo de productModel
+        console.log("products", products);
+        res.render('productList', {products}); //Hacerlo asi es lo mismo que poner {products: products}
     },
 
     getDetail: async(req, res) => {
@@ -35,16 +36,17 @@ const controller = {
     getProducts: async (req, res) => {
         const {count, rows: products} = await Product.findAndCountAll()
         const countsByCategory = await Product.findAll({
-            group: ['category'], 
+            group: ['categoryId'], 
+            include: [{ model: Category, attributes: ['name'] }],
             attributes: [
-                [sequelize.fn('COUNT', sequelize.col('category')), 'count'], 
-                'category'
+                [sequelize.fn('COUNT', sequelize.col('categoryId')), 'count'], 
+                'categoryId'
             ]
         })
 
-
+        console.log(countsByCategory);
         const countByCategory = countsByCategory.reduce((prev, curr, index)=> {
-        prev[curr.dataValues.category] = curr.dataValues.count
+        prev[curr.dataValues.category.name] = curr.dataValues.count
         return prev;
     }, {})  
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="/public/img/planeta.png" type="image/png">
+    <link rel="icon" href="/img/planeta.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geo Cosmética</title>
@@ -22,14 +22,14 @@
         <article class="productList">
             <% products.forEach(producto => { %>
                 <section class="productoDeLista">
-                    <div class="img-container"><img src="/img/prodImages/<%=producto.imageUpload %>"></div>
+                    <div class="img-container"><img src="/img/prodImages/<%=producto.image%>"></div>
                     <div class="precioDeLista">
-                        <h2>$ <%= producto.productPrice %></h2>
+                        <h2>$ <%= producto.price %></h2>
                         <p><%= producto.masBuscado %></p>
                     </div>
                     <div class="descripcionDeLista">
                         <h4><%= producto.productName %></h4>
-                        <p><%= producto.productDescription %></p>  
+                        <p><%= producto.description %></p>  
                         <a href=""><button class="secondary" type="button"> Ver Detalle </button> </a>
                         <form action="/product/<%= producto.id %>/delete" method="post">
                             <button class="primary" type="submit"><i class="fa-solid fa-trash"></i></button>
