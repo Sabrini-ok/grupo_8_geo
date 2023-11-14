@@ -35,15 +35,17 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // @GET - /products
 router.get('/cart', authMiddleware(false), productController.cart);
 
-router.get('/:id/edit', authMiddleware(true), productController.getEdit);
+router.use(authMiddleware(true, true));
 
-router.get('/list', authMiddleware(true), productController.getList);
+router.get('/:id/edit', productController.getEdit);
+
+router.get('/list', productController.getList);
 
 //@Get - /products/:id/detail
-router.get('/:id/detail', authMiddleware(true), productController.getDetail);
+router.get('/:id/detail', productController.getDetail);
 
 //@Get - /products/create
-router.get('/create', authMiddleware(true), productController.getCreate); //Ruta para crear un producto
+router.get('/create', productController.getCreate); //Ruta para crear un producto
 
 //@POST - /products
 router.post('/', uploadFile.single('imageUpload'), productController.postProduct);

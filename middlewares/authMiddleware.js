@@ -1,12 +1,12 @@
 
 const jwt = require('jsonwebtoken');
 
-    module.exports = (neededRoleAdmin) => (req, res, next) => {
+    module.exports = (needAuth, neededRoleAdmin = false) => (req, res, next) => {
     const token = req.cookies.session;
     
    
 
-    if (!token) {
+    if (!token && needAuth) {
         return res.redirect('/user/login');
     }
 
@@ -17,10 +17,18 @@ const jwt = require('jsonwebtoken');
         }
 
         req.user = user;
+        res.locals = {
+            ...res.locals,
+            user
+        }
         next();
     } catch (error) {
         res.clearCookie('session');
-        return res.redirect('/user/login');
+        if (needAuth) {
+            return res.redirect('/user/login');
+        }
+
+        next();
     }
 
 }

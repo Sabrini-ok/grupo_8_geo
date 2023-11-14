@@ -49,15 +49,15 @@ const unauthMiddleware = require('../middlewares/unauthMiddleware');
 router.get('/login', unauthMiddleware, userController.login);
 
 router.post('/login', userController.loginPost)
-router.get('/logout', authMiddleware(false), userController.logout)
+router.get('/logout', authMiddleware(true, false), userController.logout)
 
 router.get('/register', unauthMiddleware, userController.register);
-router.get('/', authMiddleware(true), userController.getUsers)
+router.get('/', authMiddleware(true, true), userController.getUsers)
 
 
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
 
-router.get('/profile/', authMiddleware(false), userController.profile);
+router.get('/profile/', authMiddleware(true, false), userController.profile);
 
 
 module.exports = router;
