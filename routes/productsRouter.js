@@ -53,6 +53,6 @@ router.post('/', uploadFile.single('imageUpload'), productController.postProduct
 // @DELETE - /products/:id/delete
 router.post('/:id/delete', productController.deleteProduct);
 
-router.put('/:id/edit', productController.updateProduct);
+router.post('/:id/edit', uploadFile.single('imageUpload'), productController.updateProduct);
 
 module.exports = router;

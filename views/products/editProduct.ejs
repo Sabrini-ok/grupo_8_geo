@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="/public/img/planeta.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo Cosmética</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
+    <%- include('./partials/head') %>
 </head>
 <body>
     <header>
@@ -19,7 +12,7 @@
         <div class="subtitle">
             <p class="description">Editá este producto del listado.</p>
         </div>
-        <form action="/products/<%= product.id %>/edit?_method=PUT" method="post">
+        <form action="/product/<%= product.id %>/edit" method="post">
             <div class="formLeft">
                 <div class="ourInputs">
                     <label for="productName">Nombre de producto</label>
@@ -28,29 +21,31 @@
                 </div>
                 <div class="ourInputs">
                     <label for="productDescription">Descripción</label>
-                    <input type="text" name="productDescription" id="productDescription" required placeholder="Describí el producto para tus clientes">
+                    <input type="text" name="productDescription" id="productDescription" required placeholder="Describí el producto para tus clientes" value="<%= product.description %>">
                     <span class="feedback"></span>
                 </div>
         
                 <div class="ourInputs">
                     <label for="productCategory">Categoría</label>
                     <select class="productCategory" name="productCategory" required>
-                        <option value="" disabled selected>Selecciona</option>
-                        <option value="cuidado facial">Cuidado Facial</option>
-                        <option value="cuidado corporal">Cuidado Corporal</option>
-                        <option value="higiene personal">Higiene personal</option>
+                   
+                        
+                        <% for (let i = 0; i < categories.length; i++) { %> 
+                            <option value="<%= categories[i].id %>" <% if (categories[i].id == product.categoryId) { %> selected <% } %>><%= categories[i].name %></option>
+                            <% } %>
                     </select>
                 </div>
             </div>
             <div class="formRight">
                 <div class="ourInputs">
                     <label for="productPrice">Precio</label>
-                    <input type="text" name="productPrice" id="productPrice" required placeholder="$.-">
+                    <input type="text" name="productPrice" id="productPrice" required placeholder="$.-" value="<%= product.price %>">
                     <span class="feedback"></span>
                 </div>
                 <div class="ourInputs">
                     <label for="imageUpload">Subir imagen</label>
-                    <input type="file" id="imageUpload" name="imageUpload" required placeholder="Seleccionar archivo">
+                    <img src="/img/prodImages/<%= product.image %>" width="300"> 
+                    <input type="file" id="imageUpload" name="imageUpload" placeholder="Seleccionar archivo" >
                     <span class="feedback"></span>
                 </div>
                 <div class="bottomForm">
