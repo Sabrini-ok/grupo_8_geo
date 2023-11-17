@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="icon" href="img/planeta.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo Cosmética</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
+    <%- include('./partials/head') %>
 </head>
+
 <body>
 
     <header>
-    <%- include('./partials/header') %>
+        <%- include('./partials/header') %>
     </header>
 
     <main class="mainLogin">
@@ -25,88 +20,74 @@
             </div>
             <div class="ourInputs">
                 <label for="userName">Nombre de Usuario</label>
-                <input 
-                type="text" 
-                name="userName" 
-                id="userName" 
-                placeholder="Ingresá tu nombre" 
-                class="form-control <%= locals.errors && errors.userName ? 'is-invalid' : null %>" 
-                value="<% locals.oldData ? oldData.userName : null %>"
-                >
+                <input type="text" name="userName" id="userName" placeholder="Ingresá tu nombre"
+                    class="form-control <%= locals.errors && errors.userName ? 'is-invalid' : null %>"
+                    value="<% locals.oldData ? oldData.userName : null %>">
                 <% if (locals.errors && errors.userName) { %>
-                    <div class = "text-danger">
+                    <div class="text-danger">
                         <%= errors.userName.msg %>
-                    </div> 
-                <% } %>
-                
+                    </div>
+                    <% } %>
+
             </div>
 
             <div class="ourInputs">
                 <label for="email">Email</label>
-                <input 
-                type="text" 
-                name="email" 
-                id="email" 
-                placeholder="Ingresá tu email" 
-                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>" 
-                value="<% locals.oldData ? oldData.email : null %>"
-                >
+                <input type="text" name="email" id="email" placeholder="Ingresá tu email"
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<% locals.oldData ? oldData.email : null %>">
                 <% if (locals.errors && errors.email) { %>
-                    <div class = "text-danger">
+                    <div class="text-danger">
                         <%= errors.email.msg %>
-                    </div> 
-                <% } %>
+                    </div>
+                    <% } %>
             </div>
-    
+
             <div class="ourInputs">
                 <label for="userPassword">Contraseña</label>
-                <input 
-                type="password" 
-                name="userPassword" 
-                id="userPassword" 
-                placeholder="********">
+                <input type="password" name="userPassword" id="userPassword" placeholder="********">
                 <% if (locals.errors && errors.userPassword) { %>
-                    <div class = "text-danger">
+                    <div class="text-danger">
                         <%= errors.userPassword.msg %>
-                    </div> 
-                <% } %>
+                    </div>
+                    <% } %>
             </div>
 
             <div class="ourInputs">
                 <label for="avatar">Foto de perfil</label>
-                <input 
-                type="file" 
-                id="avatar" 
-                name="avatar" 
-                placeholder="Seleccionar archivo">
+                <input type="file" id="avatar" name="avatar" placeholder="Seleccionar archivo">
                 <% if (locals.errors && errors.avatar) { %>
-                    <div class = "text-danger">
+                    <div class="text-danger">
                         <%= errors.avatar.msg %>
-                    </div> 
-                <% } %>
+                    </div>
+                    <% } %>
             </div>
-    
+
             <div class="ourInputs">
-            <label for="gender">Género</label>
-            <select class="gender" name="gender">
-                <option value="" disabled selected>Selecciona tu género</option>
-                <% 
-                let gender = ['Femenino', 'Masculino', 'Sin especificar']
-                %>
-                <% for (const oneGender of gender) { %>
-                    <option 
-                    value="<%= oneGender %>"
-                    <%= locals.oldData && (oneGender === oldData.gender) ? 'selected' : null %>
-                    > <%= oneGender %> </option>
-                <% } %>
-            </select>
-            <% if (locals.errors && errors.gender) { %>
-                <div class = "text-danger">
-                    <%= errors.gender.msg %>
-                </div> 
-            <% } %>
+                <label for="gender">Género</label>
+                <select class="gender" name="gender">
+                    <option value="" disabled selected>Selecciona tu género</option>
+                    <% let gender=['Femenino', 'Masculino' , 'Sin especificar' ] %>
+                        <% for (const oneGender of gender) { %>
+                            <option value="<%= oneGender %>" <%=locals.oldData && (oneGender===oldData.gender)
+                                ? 'selected' : null %>
+                                > <%= oneGender %>
+                            </option>
+                            <% } %>
+                </select>
+                <% if (locals.errors && errors.gender) { %>
+                    <div class="text-danger">
+                        <%= errors.gender.msg %>
+                    </div>
+                    <% } %>
             </div>
-    
+
+            <div class="ourCheckbox">
+                <input type="checkbox" id="admin" name="admin" <% if (locals.oldData && oldData.admin) { %>checked<% } %>>
+                <label for="admin">Soy admin</label>
+            </div>
+            
+
             <div class="loginButton">
                 <button type="submit"> Comenzar </button>
             </div>
@@ -120,13 +101,14 @@
                     <p>¿Ya tenés cuenta? </p>
                     <button type="button"> Ingresá acá </button>
                 </div>
-            </div>  
+            </div>
         </form>
     </main>
 
     <footer>
-        <%- include('./partials/footer') %>    
-    </footer> 
-    
+        <%- include('./partials/footer') %>
+    </footer>
+
 </body>
+
 </html>

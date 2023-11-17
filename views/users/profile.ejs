@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="/img/planeta.png" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo Cosmética</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
+    <%- include('./partials/head') %>    
 </head>
 <body>
 
@@ -16,14 +9,14 @@
     <%- include('./partials/header') %>
     </header>
 
-    <main class="mainLogin">
+    <main class="userProfile">
         <h3>Perfil de usuario</h3>
-        <p> ID: <%= locals.user.id %> </p>
+        <p>ID: <%= locals.user.id %> </p>
         <p>Nombre: <%= locals.user.fullName %> </p>
         <p>Email: <%= locals.user.email %>  </p>
         <p>Género: <%= locals.user.gender %></p>
         
-        <button class="loginButton"><a href="/user/edit">Editar perfil</a></p>
+        <button class="loginButton"><a href="/user/<%= user.id %>/edit">Editar perfil</a></p>
     </main>
 
     <footer>

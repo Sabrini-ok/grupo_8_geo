@@ -1,43 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="icon" href="/img/planeta.png" type="image/png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo Cosmética</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/1abdb540d6.js" crossorigin="anonymous"></script>
+    <%- include('./partials/head') %>
 </head>
+
 <body>
     <header>
         <%- include('./partials/header') %>
     </header>
+    
     <main>
         <div class="topList">
             <h3>Listado de productos</h3>
-            <a href="/product/create"><button class="primary" type="button">Crear Producto</button></a>
+            <a href="/product/create">
+                <button class="primary" type="button">Crear Producto</button>
+            </a>
         </div>
+
         <article class="productList">
             <% products.forEach(producto => { %>
                 <section class="productoDeLista">
-                    <div class="img-container"><img src="/img/prodImages/<%=producto.image%>"></div>
+                    <div class="img-container">
+                        <img src="/img/prodImages/<%=producto.image%>">
+                    </div>
                     <div class="precioDeLista">
                         <h2>$ <%= producto.price %></h2>
                         <p><%= producto.masBuscado %></p>
                     </div>
                     <div class="descripcionDeLista">
                         <h4><%= producto.productName %></h4>
-                        <p><%= producto.description %></p>  
+                        <p><%= producto.description %></p>
+                        
                         <form action="/product/<%= producto.id %>/delete" method="post">
-                            <button class="primary" type="submit"><i class="fa-solid fa-trash"></i></button>
+                            <button class="primary" type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </form>
-                        <a href="/product/<%= producto.id %>/edit"><button class="primary"><i class="fa-solid fa-pen-to-square"></i></i></button></a>
+                        
+                        <a href="/product/<%= producto.id %>/edit">
+                            <button class="primary">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                        </a>
                     </div>
                 </section>
             <% }) %>
         </article>
     </main>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
 </body>
+
 </html>

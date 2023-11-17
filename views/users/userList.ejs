@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/header') %>
+    </header>
+    
+    <main>
+        <div class="topList">
+            <h3>Listado de usuarios</h3>
+            <a href="/user/register">
+                <button class="primary" type="button">Agregar usuario</button>
+            </a>
+        </div>
+
+        <article class="productList">
+            <% users.forEach(usuario => { %>
+                <section class="productoDeLista">
+                    <div class="img-container">
+                        <img src="/img/avatars/<%=usuario.image%>">
+                    </div>
+                    <div class="descripcionDeLista">
+                        <h4><%= usuario.fullName %></h4>
+                        <p><%= usuario.email %></p>
+                        <p><%= '****************' %></p>
+                        
+                        <form action="/user/<%= usuario.id %>/delete" method="post">
+                            <button class="primary" type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                        
+                        <a href="/user/<%= usuario.id %>/edit">
+                            <button class="primary">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                        </a>
+                    </div>
+                </section>
+            <% }) %>
+        </article>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+</body>
+
+</html>
