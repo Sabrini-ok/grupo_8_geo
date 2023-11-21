@@ -59,7 +59,7 @@ CREATE TABLE `productos` (
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `full_name` varchar(200) DEFAULT NULL,
-  `email` varchar(200) DEFAULT NULL,
+  `email` varchar(200) UNIQUE NOT NULL,
   `gender` varchar(200) DEFAULT NULL,
   `password` varchar(200) DEFAULT NULL,
   `avatar` varchar(200) DEFAULT NULL

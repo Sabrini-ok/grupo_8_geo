@@ -1,38 +1,39 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const fs = require('fs');
-const methodOverride = require('method-override');
+const session = require('express-session');
 const dotenv = require('dotenv').config();
 const mainRouter = require('./routes/mainRouter');
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productsRouter');
-const session = require('express-session');
-const connection = require('./database/connection')
+const connection = require('./database/connection');
 const userApiRouter = require('./routes/userApiRouter');
 const productApiRouter = require('./routes/productApiRouter');
 const cookieParser = require('cookie-parser');
 
-async function testConnection (){
+// Añadir el módulo mysql2
+const mysql = require('mysql2');
+
+// ...
+
+async function testConnection() {
     try {
-        await connection.authenticate()
+        await connection.authenticate();
         connection.sync();
     } catch (error) {
-        console.log ("Error: ", error)
+        console.log("Error: ", error);
     }
 }
 
-testConnection ()
+testConnection();
 
-app.use(cookieParser())
+app.use(cookieParser());
 
 const publicPath = path.resolve(__dirname, './public');
-app.use(express.static(publicPath));   //Para hacer publicos los archivos estaticos
+app.use(express.static(publicPath));
 
-
-app.use(express.urlencoded({extended: true}));
-app.use(express.json()); //Con estas dos lineas podemos acceder desde el controller a lo que el usuario inserta en el formulario por POST (req.body)
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.set('view engine', 'ejs');
 app.set('views', [
@@ -42,7 +43,6 @@ app.set('views', [
     path.join(__dirname, './views/users'),
     path.join(__dirname, './views/products')
 ]);
-
 
 app.use(session({
     secret: 'secret0_secret1',
@@ -56,4 +56,29 @@ app.use('/product', productRouter);
 app.use('/api/users', userApiRouter);
 app.use('/api/products', productApiRouter);
 
-app.listen(process.env.PORT || 3000, () => console.log('Servidor corriendo en puerto ' + process.env.PORT)); // Run the server
+// Endpoint para el registro de usuarios
+app.post('/register', async (req, res) => {
+    const { email, password } = req.body;
+
+    // Verificar si el correo electrónico ya está registrado
+    const query = 'SELECT * FROM users WHERE email = ?';
+    try {
+        const [results] = await connection.query(query, [email]);
+
+        if (results.length > 0) {
+            return res.status(400).json({ error: 'El correo electrónico ya está en uso.' });
+        }
+
+        // Registrar al nuevo usuario en la base de datos
+        const insertQuery = 'INSERT INTO users (email, password) VALUES (?, ?)';
+        await connection.query(insertQuery, [email, password]);
+
+        return res.status(200).json({ message: 'Registro exitoso.' });
+    } catch (error) {
+        console.error('Error al registrar nuevo usuario:', error);
+        return res.status(500).json({ error: 'Error interno del servidor.' });
+    }
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log('Servidor corriendo en puerto ' + PORT));
