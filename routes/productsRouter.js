@@ -33,6 +33,9 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // @GET - /products/cart
 router.get('/cart', authMiddleware(false), productController.cart);
 
+// @GET - /products/destacados
+router.get('/destacados', productController.getDestacados);
+
 // Middleware para verificar autenticación en rutas siguientes
 router.use(authMiddleware(true, true));
 

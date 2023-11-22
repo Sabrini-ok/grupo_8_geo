@@ -10,11 +10,8 @@ const connection = require('./database/connection');
 const userApiRouter = require('./routes/userApiRouter');
 const productApiRouter = require('./routes/productApiRouter');
 const cookieParser = require('cookie-parser');
-
-// Añadir el módulo mysql2
+const cors = require('cors');
 const mysql = require('mysql2');
-
-// ...
 
 async function testConnection() {
     try {
@@ -55,6 +52,20 @@ app.use('/user', userRouter);
 app.use('/product', productRouter);
 app.use('/api/users', userApiRouter);
 app.use('/api/products', productApiRouter);
+
+app.get('/api/categories', (req, res) => {
+  const query = 'SELECT * FROM category';
+
+  connection.query(query, (error, results) => {
+    if (error) {
+      console.error('Error en la consulta:', error);
+      res.status(500).send('Error interno del servidor');
+    } else {
+      res.json(results);
+    }
+  });
+});
+  
 
 // Endpoint para el registro de usuarios
 app.post('/register', async (req, res) => {

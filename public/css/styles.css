@@ -113,7 +113,7 @@ header{
 
 .productDetail{
     display: flex;
-    width: 80%;
+    width: fit-content;
     flex: 1 0 0;
     border-radius: 8px;
     background: #FFF;
@@ -122,7 +122,6 @@ header{
 }
 
 .productoDetalle img{
-    width: 200px;
     border-radius: 8px;
     object-fit: cover;
     

@@ -5,9 +5,16 @@ const sequelize = require('../database/connection');
 const Category = require('../database/models/categoryModelSequelize');
 
 const controller = {
-    cart: (req, res) => {
-        res.render('productCart', { user: req.user });
-    },
+    cart: async (req, res) => {
+    try {
+      const products = await Product.findAll();
+
+      res.render('productCart', { user: req.user, products });
+    } catch (error) {
+      console.error('Error al obtener productos:', error);
+      res.status(500).send('Error interno del servidor');
+    }
+  },
 
     getList: async (req, res) => {
         const products = await Product.findAll();
@@ -88,6 +95,20 @@ const controller = {
             attributes: ['id', 'productName', 'price', 'description', 'image', 'categoryId'],
         });
         res.render('editProduct', { product, categories });
+    },
+
+    getDestacados: async (req, res) => {
+        try {
+            const destacados = await Product.findAll({
+                where: { destacado: true },
+                limit: 4,
+            });
+
+            res.render('productosDestacados', { destacados });
+        } catch (error) {
+            console.error('Error al obtener productos destacados:', error);
+            res.status(500).send('Error interno del servidor');
+        }
     },
 
     deleteProduct: async (req, res) => {
