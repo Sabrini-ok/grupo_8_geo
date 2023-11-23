@@ -70,7 +70,7 @@ router.post('/register', uploadFile.single('avatar'), validations, userControlle
 router.get('/:id/profile/', authMiddleware(true, false), userController.profile);
 
 // @GET - /user/:id/edit
-router.get('/:id/edit', userController.getEdit);
+router.get('/:id/edit', authMiddleware(true, true), userController.getEdit);
 
 router.get('/add', authMiddleware(true, true), userController.addUser);
 

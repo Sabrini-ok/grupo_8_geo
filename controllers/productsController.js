@@ -9,7 +9,7 @@ const controller = {
         try {
             const products = await Product.findAll();
             const total = products.reduce((acc, product) => acc + Number(product.dataValues.price), 0);
-            res.render('productCart', { user: req.user, products, total });
+            res.render('productCart', { products, total });
 
         } catch (error) {
             console.error('Error al obtener productos:', error);
@@ -33,7 +33,7 @@ const controller = {
                 as: 'category'
             }
         });
-        res.render('productDetail', { products: result.dataValues, user: req.user });
+        res.render('productDetail', { products: result.dataValues });
     },
 
     getProducts: async (req, res) => {

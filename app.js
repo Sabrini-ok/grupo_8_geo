@@ -56,11 +56,6 @@ app.use('/product', productRouter);
 app.use('/api/users', userApiRouter);
 app.use('/api/products', productApiRouter);
 
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Algo salió mal!');
-});
-
 app.get('/api/categories', async (req, res) => {
   const categories = await Category.findAll();
   res.json(categories);
@@ -69,7 +64,6 @@ app.get('/api/categories', async (req, res) => {
 app.post('/register', async (req, res) => {
     const { email, password } = req.body;
 
-    
     const query = 'SELECT * FROM users WHERE email = ?';
     try {
         const [results] = await connection.query(query, [email]);
@@ -78,7 +72,6 @@ app.post('/register', async (req, res) => {
             return res.status(400).json({ error: 'El correo electrónico ya está en uso.' });
         }
 
-        
         const insertQuery = 'INSERT INTO users (email, password) VALUES (?, ?)';
         await connection.query(insertQuery, [email, password]);
 
@@ -87,6 +80,16 @@ app.post('/register', async (req, res) => {
         console.error('Error al registrar nuevo usuario:', error);
         return res.status(500).json({ error: 'Error interno del servidor.' });
     }
+
+});
+
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Algo salió mal!');
+});
+
+app.get("*", (req, res) => {
+    res.status(404).render('404');
 });
 
 const PORT = process.env.PORT || 3000;

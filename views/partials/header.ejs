@@ -16,9 +16,9 @@
                     <button class="menu-icon"><i class="fas fa-bars"></i></button>
                     <a href="/product/cart"><button class="cart-icon"><i class="fa-solid fa-cart-shopping"></i></button></a>
                 </section>
-                <% if (locals.user) { %>
+                <% if (locals.userLogged) { %>
                     <section>
-                        <a href = "/user/<%= user.id %>/profile"> Hola, <%= user.fullName %> </a> 
+                        <a href = "/user/<%= userLogged.id %>/profile"> Hola, <%= userLogged.fullName %> </a> 
                     </section><section>
                         <a href="/user/logout"><button class="enter-button" type="button"> Cerrá sesión </button> </a>
                     </section>

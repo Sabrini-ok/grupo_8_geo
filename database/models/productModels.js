@@ -46,8 +46,6 @@ const modelo = {
         // Filtramos el producto de ID seleccionado
         products = products.filter(productoActual => productoActual.id !== id);
 
-        console.log(products);
-
         const jsonProducts = JSON.stringify(products);
 
         fs.writeFileSync(modelo.fileRoute, jsonProducts, 'utf-8');

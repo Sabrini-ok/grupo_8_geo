@@ -180,7 +180,7 @@ const controller = {
     },
 
     profile: async (req, res) => {
-        const id = req.user.id;
+        const id = req.userLogged.id;
         const user = await User.findByPk(id);
         return res.render('profile', {
             user: user.dataValues

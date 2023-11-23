@@ -16,10 +16,10 @@ const jwt = require('jsonwebtoken');
             return res.redirect('/');
         }
 
-        req.user = user;
+        req.userLogged = user;
         res.locals = {
             ...res.locals,
-            user
+            userLogged: user
         }
         next();
     } catch (error) {
