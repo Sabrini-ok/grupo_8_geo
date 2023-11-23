@@ -56,6 +56,11 @@ app.use('/product', productRouter);
 app.use('/api/users', userApiRouter);
 app.use('/api/products', productApiRouter);
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Algo salió mal!');
+});
+
 app.get('/api/categories', async (req, res) => {
   const categories = await Category.findAll();
   res.json(categories);
