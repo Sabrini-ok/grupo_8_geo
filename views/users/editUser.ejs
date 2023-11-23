@@ -62,11 +62,11 @@
             <div class="ourInputs">
                 <label for="gender">Género</label>
                 <select class="gender" name="gender">
-                    <option value="" disabled selected>Selecciona tu género</option>
+                    <option value="" disabled selected>Selecciona el género</option>
                     <% let gender=['Femenino', 'Masculino' , 'Sin especificar' ] %>
                         <% for (const oneGender of gender) { %>
-                            <option value="<%= user.gender %>" <%=locals.oldData && (oneGender===oldData.gender)
-                                ? 'selected' : null %>
+                            <option value="<%= oneGender %>" 
+                                <% if (locals.oldData && oldData.gender === oneGender) { %> selected <% } %>
                                 > <%= oneGender %>
                             </option>
                             <% } %>
@@ -78,8 +78,13 @@
                     <% } %>
             </div>
 
+            <div class="ourCheckbox">
+                <input type="checkbox" id="admin" name="admin" <% if (locals.oldData && oldData.admin) { %>checked<% } %>>
+                <label for="admin">¿Es admin?</label>
+            </div>
+
             <div class="loginButton">
-                <button type="submit"> Actualizar datos</button>
+                <button type="submit"> Actualizar </button>
             </div>
         </form>
     </main>

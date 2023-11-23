@@ -46,10 +46,10 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const unauthMiddleware = require('../middlewares/unauthMiddleware');
 
 // @GET - /user/login
-router.get('/login', unauthMiddleware, userController.login);
+router.get('/login', validations, unauthMiddleware, userController.login);
 
 // @POST - /user/login
-router.post('/login', userController.loginPost);
+router.post('/login', validations, unauthMiddleware, userController.loginPost);
 
 // @GET - /user/logout
 router.get('/logout', authMiddleware(true, false), userController.logout);
@@ -66,8 +66,8 @@ router.get('/list', authMiddleware(true, true), userController.getList);
 // @POST - /user/register
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
 
-// @GET - /user/profile/
-router.get('/profile/', authMiddleware(true, false), userController.profile);
+// @GET - /user/:id/profile/
+router.get('/:id/profile/', authMiddleware(true, false), userController.profile);
 
 // @GET - /user/:id/edit
 router.get('/:id/edit', userController.getEdit);

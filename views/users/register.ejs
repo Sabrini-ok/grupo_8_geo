@@ -22,20 +22,19 @@
                 <label for="userName">Nombre de Usuario</label>
                 <input type="text" name="userName" id="userName" placeholder="Ingresá tu nombre"
                     class="form-control <%= locals.errors && errors.userName ? 'is-invalid' : null %>"
-                    value="<% locals.oldData ? oldData.userName : null %>">
+                    value="<%= locals.oldData ? oldData.userName : null %>">
                 <% if (locals.errors && errors.userName) { %>
                     <div class="text-danger">
                         <%= errors.userName.msg %>
                     </div>
                     <% } %>
-
             </div>
 
             <div class="ourInputs">
                 <label for="email">Email</label>
                 <input type="text" name="email" id="email" placeholder="Ingresá tu email"
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                    value="<% locals.oldData ? oldData.email : null %>">
+                    value="<%= locals.oldData ? oldData.email : null %>">
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
                         <%= errors.email.msg %>

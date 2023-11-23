@@ -11,10 +11,13 @@
 
     <main class="userProfile">
         <h3>Perfil de usuario</h3>
-        <p>ID: <%= locals.user.id %> </p>
-        <p>Nombre: <%= locals.user.fullName %> </p>
-        <p>Email: <%= locals.user.email %>  </p>
-        <p>Género: <%= locals.user.gender %></p>
+        <p>ID: <%= user.id %> </p>
+        <p>Nombre: <%= user.fullName %> </p>
+        <p>Email: <%= user.email %>  </p>
+        <p>Género: <%= user.gender %></p>
+        <% if (user.admin) { %>
+            <span class="pill">Admin</span>
+        <% } %>
         <img src="/img/avatars/<%= user.avatar %>" width="300">
         
         <button class="loginButton"><a href="/user/<%= user.id %>/edit">Editar perfil</a></p>

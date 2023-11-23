@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <%- include('./partials/head') %>    
+    <%- include('./partials/head') %>
 </head>
+
 <body>
+
     <header>
         <%- include('./partials/header') %>
     </header>
 
     <main class="mainLogin">
-        <form action="/user/login" method="POST">
+        <form method="POST" action="/user/login">
             <div class="formtop">
                 <img src="/img/planeta.png" alt="Geo">
                 <h1 class="h1login">Ingresá a tu cuenta</h1>
-                <p class="description">Te damos la bienvenida, por favor entrá los detalles de tu cuenta.</p>
+                <p class="description">Hola de nuevo, por favor ingresá los detalles de tu cuenta.</p>
             </div>
             <div class="ourInputs">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" required placeholder="Ingresá tu email">
-                <span class="feedback"></span>
+                <input type="text" name="email" id="email" placeholder="Ingresá tu email"
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                    <% } %>
             </div>
-    
+
             <div class="ourInputs">
                 <label for="userPassword">Contraseña</label>
                 <input type="password" name="userPassword" id="userPassword" required placeholder="********">
-                <span class="feedback"></span>
+                <% if (locals.errors && errors.userPassword) { %>
+                    <div class="text-danger">
+                        <%= errors.userPassword.msg %>
+                    </div>
+                <% } %>
             </div>
-    
+
             <div class="selectors">
-            <div class="ourCheckbox">
-                <input type="checkbox" id="recordar" name="recordar" checked>
-                <label for="recordar">Recordarme</label>
-            </div>    
+                <div class="ourCheckbox">
+                    <input type="checkbox" id="recordar" name="recordar" checked>
+                    <label for="recordar">Recordarme</label>
+                </div>
                 <button type="button">Olvidé la contraseña</button>
             </div>
-    
+
             <div class="loginButton">
                 <button type="submit"> Comenzar </button>
             </div>
@@ -48,15 +61,16 @@
                     <p>¿No tenés cuenta? </p>
                     <a href="http://localhost:3000/user/register">
                         <button type="button">Creá una</button>
-                      </a>
-                      
+                    </a>
                 </div>
-            </div>  
-        </form>      
+            </div>
+        </form>
     </main>
 
     <footer>
-        <%- include('./partials/footer') %>    
-    </footer> 
+        <%- include('./partials/footer') %>
+    </footer>
+
 </body>
+
 </html>

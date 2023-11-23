@@ -54,7 +54,7 @@ const controller = {
                 maxAge: 99999999,
             });
 
-            res.redirect('/user/profile/');
+            res.redirect(`/user/${user.dataValues.id}/profile`);
         } catch (error) {
             return res.status(500).json({
                 message: error.message
@@ -70,36 +70,45 @@ const controller = {
     },
 
     loginPost: async (req, res) => {
-        const user = await User.findOne({
-            where: {
-                email: req.body.email
-            }
-        });
-
-        if (!user) {
-            return res.redirect('login?error=El email o la contraseña son incorrectos');
-        }
-
-        const validPw = await bcrypt.compareSync(req.body.userPassword, user.dataValues.password);
-
-        if (validPw) {
-            const token = jwt.sign(
-                { id: user.dataValues.id, fullName: user.dataValues.fullName, admin: user.dataValues.admin },
-                'secret'
-            );
-
-            res.cookie('session', token, {
-                maxAge: 99999999,
+        try {
+            const user = await User.findOne({
+                where: {
+                    email: req.body.email
+                }
             });
-
-            return res.redirect(`/user/profile`);
-        } else {
-            return res.redirect('login?error=El email o la contraseña son incorrectos');
+    
+            if (!user) {
+                return res.render('login', { errors: [{ msg: 'El email o la contraseña son incorrectos' }], oldData: req.body });
+            }
+            
+            const validPw = await bcrypt.compareSync(req.body.userPassword, user.dataValues.password);
+            
+            if (validPw) {
+                const token = jwt.sign(
+                    { id: user.dataValues.id, fullName: user.dataValues.fullName, admin: user.dataValues.admin },
+                    'secret'
+                );
+            
+                res.cookie('session', token, {
+                    maxAge: 99999999,
+                });
+            
+                return res.redirect(`/user/${user.dataValues.id}/profile`);
+            } else {
+                return res.render('login', { errors: [{ msg: 'El email o la contraseña son incorrectos' }], oldData: req.body });
+            }
+        } catch (error) {
+            return res.status(500).json({
+                message: error.message
+            });
         }
     },
-
+    
     login: async (req, res) => {
-        return res.render('login');
+        return res.render('login', {
+            oldData: req.query.error ? req.body : null,
+            error: req.query.error ? 'El email o la contraseña son incorrectos' : null
+        });
     },
 
     getUsers: async (req, res) => {
@@ -203,12 +212,13 @@ const controller = {
             email: req.body.email,
             gender: req.body.gender,
             password: req.body.password,
-            admin: user.admin,
+            admin: req.body.admin === 'on',
             image: req.file ? Date.now() + "_" + req.file.filename : user.avatar
         };
         await user.update(newData);
         await user.save();
-        res.redirect('/user/profile');
+        const updatedUser = await User.findByPk(req.params.id);
+        res.redirect('/user/list');
     },
     userCount: async (req, res) => {
         const count = await User.count();

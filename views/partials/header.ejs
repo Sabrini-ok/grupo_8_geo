@@ -18,7 +18,7 @@
                 </section>
                 <% if (locals.user) { %>
                     <section>
-                        <a href = "/user/profile"> Hola, <%= user.fullName %> </a> 
+                        <a href = "/user/<%= user.id %>/profile"> Hola, <%= user.fullName %> </a> 
                     </section><section>
                         <a href="/user/logout"><button class="enter-button" type="button"> Cerrá sesión </button> </a>
                     </section>
