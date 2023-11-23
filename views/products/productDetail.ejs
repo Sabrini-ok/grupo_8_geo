@@ -11,18 +11,18 @@
         <article class="productDetail">
             
                     <section class="productoDetalle">
-                    <div class="img-container"><img src="/img/prodImages/<%=products.image%>" width="300px"></div>
-                    <div class="precio">
-                        <h2>$ <%= products.price %></h2>
-                        <p><%= products.masBuscado %></p>
-                    </div>
+                    <div class="img-container-detail"><img src="/img/prodImages/<%=products.image%>" width="300px"></div>
+                    
                     <div class="descripcion">
+                        <div class="precio">
+                            <h2>$ <%= products.price %></h2>
+                            <p><%= products.masBuscado %></p>
+                        </div>
                         <h4><%= products.productName %></h4>
                         <p><%= products.description %></p>
-                    </div>
-                    <div class="descripcion">
                         <p><%= products.category.name %></p>
                     </div>
+    
                 </section>
            
         </article>
