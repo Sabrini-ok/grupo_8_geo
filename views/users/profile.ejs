@@ -15,6 +15,7 @@
         <p>Nombre: <%= locals.user.fullName %> </p>
         <p>Email: <%= locals.user.email %>  </p>
         <p>Género: <%= locals.user.gender %></p>
+        <img src="/img/avatars/<%= user.avatar %>" width="300">
         
         <button class="loginButton"><a href="/user/<%= user.id %>/edit">Editar perfil</a></p>
     </main>

@@ -12,6 +12,7 @@ const productApiRouter = require('./routes/productApiRouter');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const mysql = require('mysql2');
+const Category = require('./database/models/categoryModelSequelize');
 
 async function testConnection() {
     try {
@@ -28,6 +29,8 @@ app.use(cookieParser());
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
+
+app.use(cors())
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -53,25 +56,15 @@ app.use('/product', productRouter);
 app.use('/api/users', userApiRouter);
 app.use('/api/products', productApiRouter);
 
-app.get('/api/categories', (req, res) => {
-  const query = 'SELECT * FROM category';
-
-  connection.query(query, (error, results) => {
-    if (error) {
-      console.error('Error en la consulta:', error);
-      res.status(500).send('Error interno del servidor');
-    } else {
-      res.json(results);
-    }
-  });
+app.get('/api/categories', async (req, res) => {
+  const categories = await Category.findAll();
+  res.json(categories);
 });
-  
 
-// Endpoint para el registro de usuarios
 app.post('/register', async (req, res) => {
     const { email, password } = req.body;
 
-    // Verificar si el correo electrónico ya está registrado
+    
     const query = 'SELECT * FROM users WHERE email = ?';
     try {
         const [results] = await connection.query(query, [email]);
@@ -80,7 +73,7 @@ app.post('/register', async (req, res) => {
             return res.status(400).json({ error: 'El correo electrónico ya está en uso.' });
         }
 
-        // Registrar al nuevo usuario en la base de datos
+        
         const insertQuery = 'INSERT INTO users (email, password) VALUES (?, ?)';
         await connection.query(insertQuery, [email, password]);
 

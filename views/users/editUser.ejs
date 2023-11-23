@@ -50,7 +50,7 @@
 
             <div class="ourInputs">
                 <label for="avatar">Foto de perfil</label>
-                <img src="/img/avatars/<%= user.image %>" width="300"> 
+                <img src="/img/avatars/<%= user.avatar %>" width="300"> 
                 <input type="file" id="avatar" name="avatar" placeholder="Seleccionar archivo">
                 <% if (locals.errors && errors.avatar) { %>
                     <div class="text-danger">

@@ -5,7 +5,10 @@
             </a>
             </section>
             <section class="search-bar">
-                <input type="search" name="barraBusqueda" placeholder="Buscar"><button><i class="fas fa-search"></i></button>
+                <form id="searchForm" action="/product/search" method="GET">
+                    <input type="search" name="query" placeholder="Buscar">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </section>
             <div class="left-nav">
                 <section class="headerbuttons">

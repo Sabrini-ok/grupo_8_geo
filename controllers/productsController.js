@@ -6,15 +6,16 @@ const Category = require('../database/models/categoryModelSequelize');
 
 const controller = {
     cart: async (req, res) => {
-    try {
-      const products = await Product.findAll();
+        try {
+            const products = await Product.findAll();
+            const total = products.reduce((acc, product) => acc + Number(product.dataValues.price), 0);
+            res.render('productCart', { user: req.user, products, total });
 
-      res.render('productCart', { user: req.user, products });
-    } catch (error) {
-      console.error('Error al obtener productos:', error);
-      res.status(500).send('Error interno del servidor');
-    }
-  },
+        } catch (error) {
+            console.error('Error al obtener productos:', error);
+            res.status(500).send('Error interno del servidor');
+        }
+    },
 
     getList: async (req, res) => {
         const products = await Product.findAll();
@@ -132,7 +133,38 @@ const controller = {
         await product.update(newData);
         await product.save();
         res.redirect('/product/' + product.id + '/detail');
-    }
+    },
+
+    getLastProduct: async (req, res) => {
+        try {
+            console.log('Attempting to find last product...');
+
+            const lastProduct = await Product.findOne({
+                order: [['id', 'DESC']],
+            });
+
+            console.log('Last Product:', lastProduct);
+
+            if (!lastProduct) {
+                console.log('No product found.');
+                return res.status(404).json({
+                    message: 'Product not found',
+                });
+            }
+
+            console.log('Product found. Sending response.');
+            res.json(lastProduct);
+        } catch (error) {
+            console.error('Error:', error);
+            res.status(500).json({ error: 'Internal server error' });
+        }
+    },
+
+    productCount: async (req, res) => {
+        const count = await Product.count();
+        res.json({ count });
+    },
+
 };
 
 module.exports = controller;

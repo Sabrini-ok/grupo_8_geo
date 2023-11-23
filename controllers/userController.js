@@ -19,6 +19,19 @@ const controller = {
             });
         }
 
+        const emailExists = await User.findOne({ where: { email: req.body.email } });
+
+        if (emailExists) {
+            return res.render('register', {
+                errors: {
+                    email: {
+                        msg: 'The email is already in use'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
         const randomSalt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(req.body.userPassword, randomSalt);
 
@@ -110,6 +123,53 @@ const controller = {
         return res.json(user);
     },
 
+    addUser: async (req, res) => {
+        res.render('addUser');
+    },
+
+    createUser: async (req, res) => {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render('addUser', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+
+        const emailExists = await User.findOne({ where: { email: req.body.email } });
+
+        if (emailExists) {
+            return res.render('addUser', {
+                errors: {
+                    email: {
+                        msg: 'The email is already in use'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
+        const randomSalt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(req.body.userPassword, randomSalt);
+
+        try {
+            const user = await User.create({
+                fullName: req.body.userName,
+                email: req.body.email,
+                gender: req.body.gender,
+                password: hashedPassword,
+                avatar: req.file.filename,
+                admin: req.body.admin === 'on'
+            });
+
+            res.redirect('/user/list/');
+        } catch (error) {
+            return res.status(500).json({
+                message: error.message
+            });
+        }
+    },
+
     profile: async (req, res) => {
         const id = req.user.id;
         const user = await User.findByPk(id);
@@ -143,12 +203,17 @@ const controller = {
             email: req.body.email,
             gender: req.body.gender,
             password: req.body.password,
-            admin: req.body.admin === 'on'
+            admin: user.admin,
+            image: req.file ? Date.now() + "_" + req.file.filename : user.avatar
         };
         await user.update(newData);
         await user.save();
-        res.redirect('/user/' + user.id + '/profile');
-    }
+        res.redirect('/user/profile');
+    },
+    userCount: async (req, res) => {
+        const count = await User.count();
+        res.json({ count });
+    },
 };
 
 module.exports = controller;

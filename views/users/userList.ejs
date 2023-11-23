@@ -13,7 +13,7 @@
     <main>
         <div class="topList">
             <h3>Listado de usuarios</h3>
-            <a href="/user/register">
+            <a href="/user/add">
                 <button class="primary" type="button">Agregar usuario</button>
             </a>
         </div>
@@ -22,12 +22,15 @@
             <% users.forEach(usuario => { %>
                 <section class="productoDeLista">
                     <div class="img-container">
-                        <img src="/img/avatars/<%=usuario.image%>">
+                        <img src="/img/avatars/<%=usuario.avatar%>">
                     </div>
                     <div class="descripcionDeLista">
                         <h4><%= usuario.fullName %></h4>
                         <p><%= usuario.email %></p>
                         <p><%= '****************' %></p>
+                        <% if (usuario.admin) { %>
+                            <span class="pill">Admin</span>
+                        <% } %>
                         
                         <form action="/user/<%= usuario.id %>/delete" method="post">
                             <button class="primary" type="submit">

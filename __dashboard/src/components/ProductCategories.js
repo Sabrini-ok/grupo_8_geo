@@ -6,7 +6,7 @@ function ProductCategories() {
   useEffect(() => {
     const obtenerCategorias = async () => {
       try {
-        const respuesta = await fetch('http://localhost:3000/api/categories'); // Cambia la URL según donde esté alojada tu API
+        const respuesta = await fetch('http://localhost:3000/api/categories');
         const datos = await respuesta.json();
         setCategorias(datos);
       } catch (error) {
@@ -30,7 +30,7 @@ function ProductCategories() {
             {categorias.map((categoria, index) => (
               <div className="col-lg-6 mb-4" key={index}>
                 <div className="card bg-dark text-white shadow">
-                  <div className="card-body">{categoria}</div>
+                  <div className="card-body">{categoria.name}</div>
                 </div>
               </div>
             ))}

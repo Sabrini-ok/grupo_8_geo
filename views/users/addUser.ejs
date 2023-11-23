@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+
+    <header>
+        <%- include('./partials/header') %>
+    </header>
+
+    <main class="mainLogin">
+        <form method="POST" action="/user/add" enctype="multipart/form-data">
+            <div class="formtop">
+                <h1 class="h1login">Creá un usuario</h1>
+            </div>
+            <div class="ourInputs">
+                <label for="userName">Nombre de Usuario</label>
+                <input type="text" name="userName" id="userName" placeholder="Ingresá tu nombre"
+                    class="form-control <%= locals.errors && errors.userName ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.userName : null %>">
+                <% if (locals.errors && errors.userName) { %>
+                    <div class="text-danger">
+                        <%= errors.userName.msg %>
+                    </div>
+                    <% } %>
+
+            </div>
+
+            <div class="ourInputs">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Ingresá tu email"
+                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <div class="text-danger">
+                        <%= errors.email.msg %>
+                    </div>
+                    <% } %>
+            </div>
+
+            <div class="ourInputs">
+                <label for="userPassword">Contraseña</label>
+                <input type="password" name="userPassword" id="userPassword" placeholder="********">
+                <% if (locals.errors && errors.userPassword) { %>
+                    <div class="text-danger">
+                        <%= errors.userPassword.msg %>
+                    </div>
+                    <% } %>
+            </div>
+
+            <div class="ourInputs">
+                <label for="avatar">Foto de perfil</label>
+                <input type="file" id="avatar" name="avatar" placeholder="Seleccionar archivo">
+                <% if (locals.errors && errors.avatar) { %>
+                    <div class="text-danger">
+                        <%= errors.avatar.msg %>
+                    </div>
+                    <% } %>
+            </div>
+
+            <div class="ourInputs">
+                <label for="gender">Género</label>
+                <select class="gender" name="gender">
+                    <option value="" disabled selected>Selecciona tu género</option>
+                    <% let gender=['Femenino', 'Masculino' , 'Sin especificar' ] %>
+                        <% for (const oneGender of gender) { %>
+                            <option value="<%= oneGender %>" 
+                                <% if (locals.oldData && oldData.gender === oneGender) { %> selected <% } %>
+                                > <%= oneGender %>
+                            </option>
+                            <% } %>
+                </select>
+                <% if (locals.errors && errors.gender) { %>
+                    <div class="text-danger">
+                        <%= errors.gender.msg %>
+                    </div>
+                    <% } %>
+            </div>
+
+            <div class="ourCheckbox">
+                <input type="checkbox" id="admin" name="admin" <% if (locals.oldData && oldData.admin) { %>checked<% } %>>
+                <label for="admin">¿Es admin?</label>
+            </div>
+            
+
+            <div class="loginButton">
+                <button type="submit"> Comenzar </button>
+            </div>
+            <div class="socials">
+                <p> O CREÁ TU CUENTA CON</p>
+                <div class="buttongroup">
+                    <button type="button"><i class="fa-brands fa-google"></i>Google</button>
+                    <button type="button"><i class="fa-brands fa-facebook-f"></i>Facebook</button>
+                </div>
+                <div class="newusersmall">
+                    <p>¿Ya tenés cuenta? </p>
+                    <button type="button"> Ingresá acá </button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+
+</body>
+
+</html>

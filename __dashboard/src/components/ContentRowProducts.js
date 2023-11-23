@@ -1,42 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SmallCard from './SmallCard';
 
-/*  Cada set de datos es un objeto literal */
+function ContentRowProducts() {
+  const [productCount, setProductCount] = useState(0);
+  const [userCount, setUserCount] = useState(0);
 
-/* <!-- Productos --> */
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
 
-let productsInDB = {
-    title: 'Productos ingresados',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
+        const productCountResponse = await fetch('http://localhost:3000/api/products/count');
+        const productCountData = await productCountResponse.json();
+        setProductCount(productCountData.count);
 
-/* <!-- Usuarios --> */
+        const userCountResponse = await fetch('http://localhost:3000/api/users/count');
+        const userCountData = await userCountResponse.json();
+        setUserCount(userCountData.count);
 
-let usersInDB = {
-    title:'Usuarios registrados', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
+      } catch (error) {
+        console.error('Error buscando la información', error);
+      }
+    };
 
+    fetchData();
+  }, []);
 
-let cartProps = [productsInDB, usersInDB];
+  let cartProps = [
+    {
+      title: 'Productos ingresados',
+      color: 'primary',
+      cuantity: productCount,
+      icon: 'fa-clipboard-list',
+    },
+    {
+      title: 'Usuarios registrados',
+      color: 'success',
+      cuantity: userCount,
+      icon: 'fa-award',
+    },
+  ];
 
-function ContentRowProducts(){
-    return (
-    
-        <div className="row">
-            
-            {cartProps.map( (movie, i) => {
-
-                return <SmallCard {...movie} key={i}/>
-            
-            })}
-
-        </div>
-    )
+  return (
+    <div className="row">
+      {cartProps.map((item, index) => (
+        <SmallCard {...item} key={index} />
+      ))}
+    </div>
+  );
 }
 
 export default ContentRowProducts;

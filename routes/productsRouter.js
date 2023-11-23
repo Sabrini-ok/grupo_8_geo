@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 const { body } = require('express-validator');
+const searchController = require('../controllers/searchController');
 
 // Configuración de almacenamiento para multer
 const storage = multer.diskStorage({
@@ -30,34 +31,36 @@ const validations = [
 const productController = require('../controllers/productsController');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-// @GET - /products/cart
+// @GET - /product/cart
 router.get('/cart', authMiddleware(false), productController.cart);
 
-// @GET - /products/destacados
+router.get('/search', searchController.searchProducts)
+
+// @GET - /product/destacados
 router.get('/destacados', productController.getDestacados);
 
-// Middleware para verificar autenticación en rutas siguientes
+// @GET - /product/:id/detail
+router.get('/:id/detail', authMiddleware(false, false), productController.getDetail);
+
+// Middleware para verificar autenticación en rutas siguientesss
 router.use(authMiddleware(true, true));
 
-// @GET - /products/:id/edit
+// @GET - /product/:id/edit
 router.get('/:id/edit', productController.getEdit);
 
-// @GET - /products/list
+// @GET - /product/list
 router.get('/list', productController.getList);
 
-// @GET - /products/:id/detail
-router.get('/:id/detail', productController.getDetail);
-
-// @GET - /products/create
+// @GET - /product/create
 router.get('/create', productController.getCreate);
 
-// @POST - /products
+// @POST - /product
 router.post('/', uploadFile.single('imageUpload'), productController.postProduct);
 
-// @DELETE - /products/:id/delete
+// @DELETE - /product/:id/delete
 router.post('/:id/delete', productController.deleteProduct);
 
-// @POST - /products/:id/edit
+// @POST - /product/:id/edit
 router.post('/:id/edit', uploadFile.single('imageUpload'), productController.updateProduct);
 
 module.exports = router;

@@ -61,7 +61,7 @@ router.get('/register', unauthMiddleware, userController.register);
 router.get('/', authMiddleware(true, true), userController.getUsers);
 
 // @GET - /user/list
-router.get('/list', uploadFile.single('avatar'), userController.getList);
+router.get('/list', authMiddleware(true, true), userController.getList);
 
 // @POST - /user/register
 router.post('/register', uploadFile.single('avatar'), validations, userController.processRegister);
@@ -72,10 +72,16 @@ router.get('/profile/', authMiddleware(true, false), userController.profile);
 // @GET - /user/:id/edit
 router.get('/:id/edit', userController.getEdit);
 
+router.get('/add', authMiddleware(true, true), userController.addUser);
+
+router.post('/add', authMiddleware(true, true), uploadFile.single('avatar'), validations, userController.createUser);
+
 // @POST - /user/:id/delete
 router.post('/:id/delete', userController.deleteUser);
 
 // @POST - /user/:id/edit
-router.post('/:id/edit', uploadFile.single('imageUpload'), userController.updateUser);
+router.post('/:id/edit', uploadFile.single('avatar'), userController.updateUser);
+
+
 
 module.exports = router;
