@@ -25,11 +25,11 @@
                             <p>Cantidad: <%= i + 1 %></p>
                         </div>
                         <div class="product-buttons">
-                            <div class="primary">
-                                <button>Comprar</button>
+                            <div>
+                              <a href="/user/login" class="primary">Comprar</a>
                             </div>
-                            <div class="secondary">
-                                <button>Eliminar</button>
+                            <div>
+                              <a href="/user/login" class="secondary">Eliminar</a>
                             </div>
                         </div>
                     </section>
@@ -49,8 +49,9 @@
                 <p>Total:</p>
                 <p>$<%= locals.total.toFixed(2) %></p>
             </div>
-            <div class="checkout-button">
-                <button>Ir al Pago</button>
+            <div class="primary">
+                <a href="/user/login">Ir al Pago</a>
+            </div>
             </div>
         </section>
     </main>
