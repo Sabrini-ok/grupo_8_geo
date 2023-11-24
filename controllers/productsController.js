@@ -19,7 +19,6 @@ const controller = {
 
     getList: async (req, res) => {
         const products = await Product.findAll();
-        console.log("products", products);
         res.render('productList', { products });
     },
 
@@ -47,7 +46,6 @@ const controller = {
             ]
         });
 
-        console.log(countsByCategory);
         const countByCategory = countsByCategory.reduce((prev, curr, index) => {
             prev[curr.dataValues.category.name] = curr.dataValues.count;
             return prev;
@@ -137,22 +135,17 @@ const controller = {
 
     getLastProduct: async (req, res) => {
         try {
-            console.log('Attempting to find last product...');
 
             const lastProduct = await Product.findOne({
                 order: [['id', 'DESC']],
             });
 
-            console.log('Last Product:', lastProduct);
-
             if (!lastProduct) {
-                console.log('No product found.');
                 return res.status(404).json({
-                    message: 'Product not found',
+                    message: 'Producto no encontrado',
                 });
             }
 
-            console.log('Product found. Sending response.');
             res.json(lastProduct);
         } catch (error) {
             console.error('Error:', error);

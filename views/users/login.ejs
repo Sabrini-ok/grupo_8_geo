@@ -19,10 +19,10 @@
                 <p class="description">Hola de nuevo, por favor ingresá los detalles de tu cuenta.</p>
             </div>
             <div class="ourInputs">
-                <label for="email">Email</label>
+                <label for="email">Email *</label>
                 <input type="text" name="email" id="email" placeholder="Ingresá tu email"
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.email : null %>">
+                    value="<%= locals.oldData ? oldData.email : null %>" required>
                 <% if (locals.errors && errors.email) { %>
                     <div class="text-danger">
                         <%= errors.email.msg %>
@@ -31,13 +31,14 @@
             </div>
 
             <div class="ourInputs">
-                <label for="userPassword">Contraseña</label>
-                <input type="password" name="userPassword" id="userPassword" required placeholder="********">
+                <label for="userPassword">Contraseña *</label>
+                <input type="password" name="userPassword" id="userPassword" placeholder="********" required>
                 <% if (locals.errors && errors.userPassword) { %>
                     <div class="text-danger">
                         <%= errors.userPassword.msg %>
                     </div>
                 <% } %>
+                <p style="font-size: small;padding-top: 8px;">* Campos obligatorios</p>
             </div>
 
             <div class="selectors">
